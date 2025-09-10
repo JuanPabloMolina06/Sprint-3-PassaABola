@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -19,12 +20,14 @@
                     fontFamily: {
                         'poppins': ['Poppins', 'sans-serif'],
                         'montserrat': ['Montserrat', 'sans-serif'],
+                        'jaldi': ['Jaldi', 'sans-serif'],
                     },
                     colors: {
                         'primary': '#ffffff',
                         'secondary': '#8461C9', // Roxo principal
                         'tertiary': '#EE4D9B',   // Rosa
                         'quaternary': '#6EAA38', // Verde
+                        'quinary': '#A089CE',    // Roxo claro (placar)
                     }
                 }
             }
@@ -33,13 +36,13 @@
 </head>
 
 <body class="min-h-screen w-screen flex flex-col">
-
-    <header class="bg-secondary text-white shadow-md">
+    <!-- Precisa resolver o problema da scrollbar -->
+    <header class="bg-secondary text-primary shadow-md">
         <nav class="container mx-auto flex items-center justify-between px-6 py-3">
             
             <a href="../index/index.html" class="flex items-center gap-3">
                 <img src="../img/logoCopaPAB.svg" alt="Logo do canal Passa a Bola" class="h-12 w-12 md:h-14 md:w-14">
-                <h1 class="font-poppins text-2xl font-semibold text-white" style="text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);">Copa PAB</h1>
+                <h1 class="font-poppins text-2xl font-semibold text-primary" style="text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);">Copa PAB</h1>
             </a>
             
             <ul class="hidden md:flex items-center gap-8">
@@ -56,9 +59,100 @@
         </nav>
     </header>
 
-    <main class="flex-grow min-h-screen relative">
-        <img src="../img/BG_pagJogadora.png" alt="Jogadoras comemorando vitória" class="absolute h-full w-full object-cover">
+    <main>
+        <img src="../img/BG_pagJogadora.jpg" alt="Jogadoras comemorando vitória" class="object-cover h-[91vh]">
     </main>
 
+    <h1 class="flex justify-center font-montserrat text-5xl font-semibold py-10">JOGOS</h1>
+
+    <section class="min-h-40 bg-secondary">
+        <h1 class="p-2 font-jaldi text-3xl text-primary font-light">JOGOS DO CAMPEONATO</h1>
+        <div class="flex gap-5">
+            <div class="w-[12%] px-2">
+                <div class="font-jaldi text-2xl text-primary">
+                    <p>28/05 | 09:00h</p>
+                    <div class="w-full h-[2px] bg-primary rounded-xl"></div>
+                </div>
+                <div class="flex h-20 items-center gap-5 font-jaldi">
+                    <div class="flex flex-col justify-center text-lg text-primary">
+                        <h1>Time 1</h1>
+                        <h1>Time 2</h1>
+                    </div>
+                    <div class="flex flex-col justify-center items-center gap-2">
+                        <div class="w-5 h-5 bg-gray-300 rounded-full"></div>
+                        <div class="w-5 h-5 bg-gray-300 rounded-full"></div>
+                    </div>
+                    <div class="flex flex-col items-center justify-center w-12 h-16 bg-quinary rounded text-primary">
+                        <p class="text-lg font-bold">1</p>
+                        <div class="w-full h-px bg-white"></div>
+                        <p class="text-lg font-bold">0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[12%] px-2">
+                <div class="font-jaldi text-2xl text-primary">
+                    <p>29/05 | 10:00h</p>
+                    <div class="w-full h-[2px] bg-primary rounded-xl"></div>
+                </div>
+                <div class="flex h-20 items-center gap-5 font-jaldi">
+                    <div class="flex flex-col justify-center text-lg text-primary">
+                        <h1>Time 3</h1>
+                        <h1>Time 4</h1>
+                    </div>
+                    <div class="flex flex-col justify-center items-center gap-2">
+                        <div class="w-5 h-5 bg-gray-300 rounded-full"></div>
+                        <div class="w-5 h-5 bg-gray-300 rounded-full"></div>
+                    </div>
+                    <div class="flex flex-col items-center justify-center w-12 h-16 bg-quinary rounded text-primary">
+                        <p class="text-lg font-bold">1</p>
+                        <div class="w-full h-px bg-white"></div>
+                        <p class="text-lg font-bold">1</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[12%] px-2">
+                <div class="font-jaldi text-2xl text-primary">
+                    <p>30/05 | 11:00h</p>
+                    <div class="w-full h-[2px] bg-primary rounded-xl"></div>
+                </div>
+                <div class="flex h-20 items-center gap-5 font-jaldi">
+                    <div class="flex flex-col justify-center text-lg text-primary">
+                        <h1>Time 5</h1>
+                        <h1>Time 6</h1>
+                    </div>
+                    <div class="flex flex-col justify-center items-center gap-2">
+                        <div class="w-5 h-5 bg-gray-300 rounded-full"></div>
+                        <div class="w-5 h-5 bg-gray-300 rounded-full"></div>
+                    </div>
+                    <div class="flex flex-col items-center justify-center w-12 h-16 bg-quinary rounded text-primary">
+                        <p class="text-lg font-bold">3</p>
+                        <div class="w-full h-px bg-white"></div>
+                        <p class="text-lg font-bold">0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[12%] px-2">
+                <div class="font-jaldi text-2xl text-primary">
+                    <p>31/05 | 12:00h</p>
+                    <div class="w-full h-[2px] bg-primary rounded-xl"></div>
+                </div>
+                <div class="flex h-20 items-center gap-5 font-jaldi">
+                    <div class="flex flex-col justify-center text-lg text-primary">
+                        <h1>Time 5</h1>
+                        <h1>Time 6</h1>
+                    </div>
+                    <div class="flex flex-col justify-center items-center gap-2">
+                        <div class="w-5 h-5 bg-gray-300 rounded-full"></div>
+                        <div class="w-5 h-5 bg-gray-300 rounded-full"></div>
+                    </div>
+                    <div class="flex flex-col items-center justify-center w-12 h-16 bg-quinary rounded text-primary">
+                        <p class="text-lg font-bold">1</p>
+                        <div class="w-full h-px bg-white"></div>
+                        <p class="text-lg font-bold">2</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
