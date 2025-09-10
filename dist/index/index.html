@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copa Passa a Bola com Tailwind CSS</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#ffffff',
+                        'secondary': '#8461C9',
+                        'tertiary': '#EE4D9B',
+                        'quaternary': '#6EAA38',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="text-base">
+
+    <header class="relative h-screen bg-cover bg-no-repeat" style="background-image: url('../img/imgInicio.svg');">
+        <div class="absolute inset-0 bg-black bg-opacity-30"></div> <div class="relative z-10 flex h-full flex-col">
+            <nav class="flex items-center justify-between p-4 md:p-8">
+                <div class="flex items-center gap-4">
+                    <img src="../img/logoCopaPAB.svg" alt="Logo do canal Passa a Bola" class="h-16 w-16">
+                    <h1 class="font-poppins text-2xl font-semibold text-white" style="text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">Copa PAB</h1>
+                </div>
+                <a href="../index/pagLogin.html" class="font-montserrat text-xl text-white hover:text-tertiary transition-colors">Login</a>
+            </nav>
+    
+            <div class="flex flex-grow flex-col items-center justify-center text-center">
+                <h1 class="font-poppins text-5xl md:text-6xl font-bold text-white w-11/12 md:w-2/5 leading-tight mb-40">Bem-vindo ao site da Copa <span class="text-tertiary">Passa a Bola</span></h1>
+                <a href="#saiba-mais" class="font-poppins text-2xl md:text-3xl font-medium text-white bg-secondary hover:bg-tertiary transition-colors duration-500 py-3 px-8 rounded-full">Saiba mais</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="saiba-mais" class="min-h-screen w-full py-16 px-6">
+            <h1 class="font-poppins text-5xl md:text-6xl font-bold text-quaternary text-center mb-16">O que é a Copa <br>Passa a Bola?</h1>
+            <div class="flex flex-col md:flex-row items-center justify-around gap-12 max-w-7xl mx-auto">
+                <p class="font-montserrat text-xl md:text-2xl lg:text-3xl text-gray-800 md:w-1/2">A Copa Passa Bola é um torneio criado pelo canal Passa a Bola, fundado por Alê Xavier e Luana Maluf, para valorizar o futebol feminino com leveza e criatividade. Com influenciadoras, atletas e convidadas, os jogos unem diversão e competição. O projeto nasceu de encontros entre mulheres e virou uma plataforma digital que reforça o protagonismo feminino no esporte, com vídeos no YouTube, Instagram e TikTok.</p>
+                <img src="../img/meninascopaPAB.jpg" alt="Canal Passa a Bola segurando o troféu da Copa PAB" class="w-full md:w-2/5 rounded-lg shadow-xl object-cover">
+            </div>
+        </section>
+
+        <section class="min-h-screen w-full flex flex-col items-center justify-center gap-12 bg-secondary py-16 px-6 text-center">
+            <h1 class="font-poppins text-5xl md:text-6xl font-bold text-white">Como nosso site <br>funciona?</h1>
+            <div class="max-w-4xl mx-auto space-y-8">
+                <p class="font-montserrat text-xl md:text-2xl text-white">Nosso site foi desenvolvido para reunir, em um só lugar, todas as informações e ferramentas que envolvem a Copa Passa Bola. De forma prática e intuitiva, jogadoras podem se cadastrar, criar ou buscar times para participar do campeonato, com perfis completos que incluem posição, características de jogo e estatísticas. Também é possível acompanhar a programação dos jogos, resultados, chaveamento das equipes e acessar vídeos dos melhores momentos das partidas.</p>
+                <p class="font-montserrat text-xl md:text-2xl text-white">Para os torcedores, o site oferece uma experiência completa: é possível ver a tabela atualizada, conhecer os times e jogadoras, conferir conteúdos exclusivos e garantir produtos oficiais da Copa na loja virtual. Tudo isso com uma navegação simples, pensada para conectar ainda mais quem joga, organiza e apoia o futebol feminino.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="relative flex items-center justify-center p-12 bg-gray-50">
+        <a href="#" class="absolute left-4 md:left-8">
+             <img src="../img/logoCopaPAB_colorido.svg" alt="Logo do canal Passa a Bola colorida" class="w-24 h-24 md:w-32 md:h-32">
+        </a>
+        <h1 class="font-poppins text-4xl font-bold text-quaternary">Passa a Bola</h1>
+    </footer>
+
+</body>
+</html>
