@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copa PAB - Chaveamento</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-bracket@0.11.1/dist/jquery.bracket.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery-bracket@0.11.1/dist/jquery.bracket.min.js"></script>
+
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'jaldi': ['Jaldi', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#ffffff',
+                        'secondary': '#8461C9', // Roxo principal
+                        'tertiary': '#EE4D9B',   // Rosa
+                        'quaternary': '#6EAA38', // Verde
+                        'quinary': '#A089CE',    // Roxo claro (placar)
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <header class="bg-secondary text-primary shadow-md">
+        <nav class="container mx-auto flex items-center justify-between px-6 py-3">
+            
+            <a href="../index/index.html" class="flex items-center gap-3">
+                <img src="/dist//img/" alt="Logo do canal Passa a Bola" class="h-12 w-12 md:h-14 md:w-14">
+                <h1 class="font-poppins text-2xl font-semibold text-primary" style="text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);">Copa PAB</h1>
+            </a>
+            
+            <ul class="hidden md:flex items-center gap-8">
+                <li><a href="../pagJogadora.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Home</a></li>
+                <li><a href="../index/pag-jogadora/chaveamento.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Chaveamento</a></li>
+                <li><a href="../index/pag-jogadora/mapa.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Mapa</a></li>
+                <li><a href="../index/pag-jogadora/loja.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Loja</a></li>
+            </ul>
+
+            <div>
+                <a href="#" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Logout</a>
+            </div>
+
+        </nav>
+    </header>
+
+<section class="bg-gray-100 min-h-screen flex items-center justify-center p-8">
+      <div class="flex">
+    <!-- Coluna: Oitavas -->
+    <div class="flex flex-col gap-12">
+      <!-- Jogo 1 -->
+      <div class="flex items-center">
+        <div class="bg-white py-2 rounded-xl shadow w-28 text-center">Time A</div>
+        <div class="w-72 border-t-2 border-gray-400"></div>
+      </div>
+      <div class="flex items-center">
+        <div class="bg-white px-4 py-2 rounded-xl shadow w-28 text-center">Time B</div>
+        <div class="w-8 border-t-2 border-gray-400"></div>
+      </div>
+
+      <!-- Jogo 2 -->
+      <div class="flex items-center">
+        <div class="bg-white px-4 py-2 rounded-xl shadow w-28 text-center">Time C</div>
+        <div class="w-8 border-t-2 border-gray-400"></div>
+      </div>
+      <div class="flex items-center">
+        <div class="bg-white px-4 py-2 rounded-xl shadow w-28 text-center">Time D</div>
+        <div class="w-8 border-t-2 border-gray-400"></div>
+      </div>
+    </div>
+
+    <!-- Coluna: Quartas (encontro das linhas) -->
+    <div class="flex flex-col justify-between ">
+      <!-- Vencedor 1 -->
+      <div class="flex items-center">
+        <!-- linha vertical conectando -->
+        <div class="mt-[1.2rem] h-16 border-l-2 border-gray-400"></div>
+        <div class="bg-green-100  py-2 rounded-xl shadow w-28 text-center ml-4">Vencedor 1</div>
+      </div>
+
+      <!-- Vencedor 2 -->
+      <div class="flex items-center">
+        <div class="h-16 border-l-2 border-gray-400"></div>
+        <div class="bg-green-100 px-4 py-2 rounded-xl shadow w-28 text-center ml-4">Vencedor 2</div>
+      </div>
+    </div>
+
+    <!-- Coluna: Semi -->
+    <div class="flex flex-col justify-center">
+      <div class="flex items-center">
+        <div class="h-32 border-l-2 border-gray-400"></div>
+        <div class="bg-blue-100 px-4 py-2 rounded-xl shadow w-28 text-center ml-4">Finalista</div>
+      </div>
+    </div>
+
+    <!-- Coluna: Final -->
+    <div class="flex flex-col justify-center">
+      <div class="bg-yellow-100 px-4 py-2 rounded-xl shadow font-bold w-32 text-center">🏆 Campeão</div>
+    </div>
+  </div>
+</section>
+
+
+</body>
+</html>
