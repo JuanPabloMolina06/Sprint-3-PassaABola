@@ -37,149 +37,169 @@
 
 <body>
 
-    <header class="bg-secondary text-primary shadow-md">
-        <nav class="container mx-auto flex items-center justify-between px-6 py-3">
-            
-            <a href="../index/index.html" class="flex items-center gap-3">
-                <img src="../../img/logoCopaPAB.svg" alt="Logo do canal Passa a Bola" class="h-12 w-12 md:h-14 md:w-14">
-                <h1 class="font-poppins text-2xl font-semibold text-primary" style="text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);">Copa PAB</h1>
-            </a>
-            
-            <ul class="hidden md:flex items-center gap-8">
-                <li><a href="../pagJogadora.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Home</a></li>
-                <li><a href="../index/pag-jogadora/chaveamento.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Chaveamento</a></li>
-                <li><a href="../index/pag-jogadora/mapa.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Mapa</a></li>
-                <li><a href="../index/pag-jogadora/loja.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Loja</a></li>
-            </ul>
+  <header class="bg-secondary text-primary shadow-md sticky top-0 z-50">
+    <nav class="container mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
+        
+        <a href="../index.html" class="flex items-center gap-3">
+            <img src="/dist/img/logoCopaPAB.svg" alt="Logo do canal Passa a Bola" class="h-12 w-12">
+            <h1 class="font-poppins text-2xl font-semibold text-primary" style="text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);">Copa PAB</h1>
+        </a>
+        
+        <ul class="hidden md:flex items-center gap-8">
+            <li><a href="../pagJogadora.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Home</a></li>
+            <li><a href="./chaveamento.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Chaveamento</a></li>
+            <li><a href="./campeonato.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Campeonato</a></li>
+            <li><a href="./mapa.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Mapa</a></li>
+            <li><a href="./loja.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Loja</a></li>
+        </ul>
 
-            <div>
-                <a href="#" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Logout</a>
-            </div>
+        <div class="hidden md:block">
+            <a href="../index.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Logout</a>
+        </div>
 
-        </nav>
-    </header>
+        <div class="md:hidden">
+            <button id="menu-btn" class="text-primary focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-secondary">
+      <ul class="flex flex-col items-center gap-4 py-4">
+          <li><a href="./pagJogadora.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Home</a></li>
+          <li><a href="./pag-jogadora/chaveamento.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Chaveamento</a></li>
+          <li><a href="./pag-jogadora/campeonato.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Campeonato</a></li>
+          <li><a href="./pag-jogadora/mapa.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Mapa</a></li>
+          <li><a href="./pag-jogadora/loja.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Loja</a></li>
+          <li><a href="./index.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary mt-2">Logout</a></li>
+      </ul>
+  </div>
+</header>
 
 <section class="bg-gray-100">
-  <h1 class="flex justify-center py-10 w-full font-poppins text-5xl text-secondary font-bold">CHAVEAMENTO</h1>
-  <div class="min-h-screen flex justify-center p-8">
-    <div class="flex">
-      <!-- Coluna: Oitavas -->
-      <div class="flex flex-col gap-12">
-        <!-- Jogo 1 -->
-        <div class="flex items-center">
-          <div class="bg-primary py-2 rounded-xl shadow w-28 text-center">Time A</div>
-          <div class="w-20 border-t-2 border-gray-400"></div>
-        </div>
-        <div class="flex items-center">
-          <div class="bg-primary px-4 py-2 rounded-xl shadow w-28 text-center">Time B</div>
-          <div class="w-20 border-t-2 border-gray-400"></div>
-        </div>
+    <h1 class="flex justify-center py-10 w-full font-poppins text-3xl md:text-5xl text-secondary font-bold">CHAVEAMENTO</h1>
+    
+    <div class="overflow-x-auto">
+      <div class="min-h-screen flex justify-center p-8">
+          
+          <div class="flex" style="min-width: 1200px;">
+              
+              <div class="flex flex-col gap-12">
+                  <div class="flex items-center">
+                      <div class="bg-primary py-2 rounded-xl shadow w-28 text-center">Time A</div>
+                      <div class="w-20 border-t-2 border-gray-400"></div>
+                  </div>
+                  <div class="flex items-center">
+                      <div class="bg-primary px-4 py-2 rounded-xl shadow w-28 text-center">Time B</div>
+                      <div class="w-20 border-t-2 border-gray-400"></div>
+                  </div>
+              
+                  <div class="flex items-center">
+                      <div class="bg-primary px-4 py-2 rounded-xl shadow w-28 text-center">Time C</div>
+                      <div class="w-20 border-t-2 border-gray-400"></div>
+                  </div>
+                  <div class="flex items-center">
+                      <div class="bg-primary px-4 py-2 rounded-xl shadow w-28 text-center">Time D</div>
+                      <div class="w-20 border-t-2 border-gray-400"></div>
+                  </div>
   
-        <!-- Jogo 2 -->
-        <div class="flex items-center">
-          <div class="bg-primary px-4 py-2 rounded-xl shadow w-28 text-center">Time C</div>
-          <div class="w-20 border-t-2 border-gray-400"></div>
-        </div>
-        <div class="flex items-center">
-          <div class="bg-primary px-4 py-2 rounded-xl shadow w-28 text-center">Time D</div>
-          <div class="w-20 border-t-2 border-gray-400"></div>
-        </div>
+                  <div class="flex items-center">
+                      <div class="bg-primary py-2 rounded-xl shadow w-28 text-center">Time E</div>
+                      <div class="w-20 border-t-2 border-gray-400"></div>
+                  </div>
+                  <div class="flex items-center">
+                      <div class="bg-primary px-4 py-2 rounded-xl shadow w-28 text-center">Time F</div>
+                      <div class="w-20 border-t-2 border-gray-400"></div>
+                  </div>
+              
+                  <div class="flex items-center">
+                      <div class="bg-primary px-4 py-2 rounded-xl shadow w-28 text-center">Time G</div>
+                      <div class="w-20 border-t-2 border-gray-400"></div>
+                  </div>
+                  <div class="flex items-center">
+                      <div class="bg-primary px-4 py-2 rounded-xl shadow w-28 text-center">Time H</div>
+                      <div class="w-20 border-t-2 border-gray-400"></div>
+                  </div>
+              </div>
+  
+              <div class="flex flex-col gap-[4.2rem]">
+                  <div class="flex items-center">
+                      <div class="mt-[1.2rem] h-[5.6rem] border-l-2 border-gray-400"></div>
+                      <div class="flex">
+                          <div class="border-gray-400 w-20 border-b-2 mb-[1.1rem]"></div>
+                          <div class="bg-primary py-2 rounded-xl shadow w-28 text-center mt-4">Time A</div>
+                          <div class="border-gray-400 w-20 border-b-2 mb-[1.1rem]"></div>
+                      </div>
+                  </div>
+                  <div class="flex items-center">
+                      <div class="mt-[1.2rem] h-[5.6rem] border-l-2 border-gray-400"></div>
+                      <div class="flex">
+                          <div class="border-gray-400 w-20 border-b-2 mb-[1.1rem]"></div>
+                          <div class="bg-primary py-2 rounded-xl shadow w-28 text-center mt-4">Time D</div>
+                          <div class="border-gray-400 w-20 border-b-2 mb-[1.1rem]"></div>
+                      </div>
+                  </div>
+                  <div class="flex items-center">
+                      <div class="mt-[1.2rem] h-[5.6rem] border-l-2 border-gray-400"></div>
+                      <div class="flex">
+                          <div class="border-gray-400 w-20 border-b-2 mb-[1.1rem]"></div>
+                          <div class="bg-primary py-2 rounded-xl shadow w-28 text-center mt-4">Time E</div>
+                          <div class="border-gray-400 w-20 border-b-2 mb-[1.1rem]"></div>
+                      </div>
+                  </div>
+                  <div class="flex items-center">
+                      <div class="mt-[1.2rem] h-[5.6rem] border-l-2 border-gray-400"></div>
+                      <div class="flex">
+                          <div class="border-gray-400 w-20 border-b-2 mb-[1.1rem]"></div>
+                          <div class="bg-primary py-2 rounded-xl shadow w-28 text-center mt-4">Time H</div>
+                          <div class="border-gray-400 w-20 border-b-2 mb-[1.1rem]"></div>
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="flex flex-col gap-28">
+                  <div class="flex items-center">
+                      <div class="mt-[3.92rem] h-[11.12rem] border-l-2 border-gray-400"></div>
+                      <div class="flex">
+                          <div class="border-gray-400 w-20 border-b-2 mb-[1.1rem]"></div>
+                          <div class="bg-primary py-2 rounded-xl shadow w-28 text-center mt-16">Time A</div>
+                          <div class="border-gray-400 w-20 border-b-2 mb-[1.1rem]"></div>
+                      </div>
+                  </div>
+                  <div class="flex items-center">
+                      <div class="mt-[3.92rem] h-[11.12rem] border-l-2 border-gray-400"></div>
+                      <div class="flex">
+                          <div class="border-gray-400 w-20 border-b-2 mb-[1.1rem]"></div>
+                          <div class="bg-primary py-2 rounded-xl shadow w-28 text-center mt-16">Time H</div>
+                          <div class="border-gray-400 w-20 border-b-2 mb-[1.1rem]"></div>
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="flex flex-col gap-72">
+                  <div class="flex items-center">
+                      <div class="mt-[9.55rem] h-[22.15rem] border-l-2 border-gray-400"></div>
+                      <div class="flex">
+                          <div class="border-gray-400 w-20 border-b-2 mb-[1.1rem]"></div>
+                          <div class="bg-yellow-100 py-2 rounded-xl shadow w-[7rem] text-center mt-[10rem]">Time A <span class="font-bold">Campeão 🏆</span></div>
+                      </div>
+                  </div>
+              </div>
+  
+          </div>
+      </div>
+  </div>
+    </section>
+    
+    <script>
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
 
-        <!-- Jogo 3 -->
-        <div class="flex items-center">
-          <div class="bg-primary py-2 rounded-xl shadow w-28 text-center">Time E</div>
-          <div class="w-20 border-t-2 border-gray-400"></div>
-        </div>
-        <div class="flex items-center">
-          <div class="bg-primary px-4 py-2 rounded-xl shadow w-28 text-center">Time F</div>
-          <div class="w-20 border-t-2 border-gray-400"></div>
-        </div>
-  
-        <!-- Jogo 4 -->
-        <div class="flex items-center">
-          <div class="bg-primary px-4 py-2 rounded-xl shadow w-28 text-center">Time G</div>
-          <div class="w-20 border-t-2 border-gray-400"></div>
-        </div>
-        <div class="flex items-center">
-          <div class="bg-primary px-4 py-2 rounded-xl shadow w-28 text-center">Time H</div>
-          <div class="w-20 border-t-2 border-gray-400"></div>
-        </div>
-      </div>
-    </div>
-    <!-- Coluna: Quartas (encontro das linhas) -->
-    <div class="flex flex-col gap-[4.2rem]">
-      <!-- Vencedor 1 -->
-      <div class="flex items-center">
-        <!-- linha vertical conectando -->
-        <div class="mt-[1.2rem] h-[5.6rem] border-l-2 border-gray-400"></div>
-        <div class="flex">
-          <div class="border-gray-400 w-20 border-b-2 mb-[1.1rem]"></div>
-          <div class="bg-primary py-2 rounded-xl shadow w-28 text-center mt-4">Time A</div>
-          <div class="border-gray-400 w-20 border-b-2 mb-[1.1rem]"></div>
-        </div>
-      </div>
-      <div class="flex items-center">
-        <!-- linha vertical conectando -->
-        <div class="mt-[1.2rem] h-[5.6rem] border-l-2 border-gray-400"></div>
-        <div class="flex">
-          <div class="border-gray-400 w-20 border-b-2 mb-[1.1rem]"></div>
-          <div class="bg-primary py-2 rounded-xl shadow w-28 text-center mt-4">Time D</div>
-          <div class="border-gray-400 w-20 border-b-2 mb-[1.1rem]"></div>
-        </div>
-      </div>
-      <div class="flex items-center">
-        <!-- linha vertical conectando -->
-        <div class="mt-[1.2rem] h-[5.6rem] border-l-2 border-gray-400"></div>
-        <div class="flex">
-          <div class="border-gray-400 w-20 border-b-2 mb-[1.1rem]"></div>
-          <div class="bg-primary py-2 rounded-xl shadow w-28 text-center mt-4">Time E</div>
-          <div class="border-gray-400 w-20 border-b-2 mb-[1.1rem]"></div>
-        </div>
-      </div>
-      <div class="flex items-center">
-        <!-- linha vertical conectando -->
-        <div class="mt-[1.2rem] h-[5.6rem] border-l-2 border-gray-400"></div>
-        <div class="flex">
-          <div class="border-gray-400 w-20 border-b-2 mb-[1.1rem]"></div>
-          <div class="bg-primary py-2 rounded-xl shadow w-28 text-center mt-4">Time H</div>
-          <div class="border-gray-400 w-20 border-b-2 mb-[1.1rem]"></div>
-        </div>
-      </div>
-    </div>
-    <!-- Coluna: Semifinais (encontro das linhas) -->
-    <div class="flex flex-col gap-28">
-      <!-- Vencedor 1 -->
-      <div class="flex items-center">
-        <!-- linha vertical conectando -->
-        <div class="mt-[3.92rem] h-[11.12rem] border-l-2 border-gray-400"></div>
-        <div class="flex">
-          <div class="border-gray-400 w-20 border-b-2 mb-[1.1rem]"></div>
-          <div class="bg-primary py-2 rounded-xl shadow w-28 text-center mt-16">Time A</div>
-          <div class="border-gray-400 w-20 border-b-2 mb-[1.1rem]"></div>
-        </div>
-      </div>
-      <div class="flex items-center">
-        <!-- linha vertical conectando -->
-        <div class="mt-[3.92rem] h-[11.12rem] border-l-2 border-gray-400"></div>
-        <div class="flex">
-          <div class="border-gray-400 w-20 border-b-2 mb-[1.1rem]"></div>
-          <div class="bg-primary py-2 rounded-xl shadow w-28 text-center mt-16">Time H</div>
-          <div class="border-gray-400 w-20 border-b-2 mb-[1.1rem]"></div>
-        </div>
-      </div>
-    </div>
-    <!-- Coluna: Final (encontro das linhas) -->
-    <div class="flex flex-col gap-72">
-      <!-- Vencedor 1 -->
-      <div class="flex items-center">
-        <!-- linha vertical conectando -->
-        <div class="mt-[9.55rem] h-[22.15rem] border-l-2 border-gray-400"></div>
-        <div class="flex">
-          <div class="border-gray-400 w-20 border-b-2 mb-[1.1rem]"></div>
-          <div class="bg-yellow-100 py-2 rounded-xl shadow w-[7rem] text-center mt-[10rem]">Time A <span class="font-bold">Campeão 🏆</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
+      menuBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+      });
+  </script>
 </body>
 </html>
