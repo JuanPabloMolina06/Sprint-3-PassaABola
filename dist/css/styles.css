@@ -1,3 +1,116 @@
+/* Estilos para a estrutura do chaveamento */
+.round {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 2rem;
+}
+.match {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  overflow: hidden; /* Garante que os cantos arredondados sejam aplicados */
+}
+.team {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e7eb; /* gray-200 */
+}
+.match .team:last-child {
+  border-bottom: none;
+}
+.team-name {
+  font-weight: 600;
+}
+.team-score {
+  font-weight: 700;
+  background-color: #f3f4f6; /* gray-100 */
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  min-width: 30px;
+  text-align: center;
+}
+
+/* Estilos para Vencedor e Perdedor */
+.winner {
+  background-color: #8461C9; /* secondary */
+  color: white;
+}
+.winner .team-score {
+  background-color: #A089CE; /* quinary */
+  color: white;
+}
+.loser {
+  opacity: 0.6;
+}
+.loser .team-name {
+  text-decoration: line-through;
+}
+
+/* Estilos para o Campeão */
+.champion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(45deg, #fde047, #facc15); /* yellow-300 to yellow-400 */
+  color: #4a044e; /* fuchsia-950 */
+  padding: 1.5rem 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  text-align: center;
+  border: 2px solid #f9a826;
+}
+
+/* Estilos para as linhas de conexão (usando uma abordagem mais simples) */
+.connectors {
+  width: 4rem; /* Largura das linhas de conexão */
+}
+.connector, .connector-semifinal, .connector-final {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+.connector::before, .connector-semifinal::before, .connector-final::before {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  background-color: #9ca3af; /* gray-400 */
+  left: 0;
+}
+.connector::after, .connector-semifinal::after, .connector-final::after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  background-color: #9ca3af; /* gray-400 */
+  right: 0;
+}
+.connector {
+  height: 50%; /* Ocupa metade da altura disponível */
+}
+.connector:first-child {
+  border-bottom: 2px solid #9ca3af;
+  border-right: 2px solid #9ca3af;
+  border-bottom-right-radius: 0.5rem;
+}
+.connector:last-child {
+  border-top: 2px solid #9ca3af;
+  border-right: 2px solid #9ca3af;
+  border-top-right-radius: 0.5rem;
+}
+.connector-semifinal, .connector-final {
+  border-right: 2px solid #9ca3af;
+}
+
+
+
 /*! tailwindcss v4.1.13 | MIT License | https://tailwindcss.com */
 @layer properties;
 @layer theme, base, components, utilities;

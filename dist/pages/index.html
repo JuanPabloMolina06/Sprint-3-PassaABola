@@ -33,8 +33,8 @@
 </head>
 <body class="text-base bg-gray-50">
 
-    <header class="relative h-[90vh] md:h-screen bg-cover bg-center bg-no-repeat" style="background-image: url('/dist/public/imgInicio.svg');">
-        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    <header class="relative h-[90vh] md:h-screen bg-cover bg-center bg-no-repeat" style="background-image: url('/dist/public/BG_teste.jpg');">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
         <div class="relative z-10 flex h-full flex-col">
             <nav class="flex items-center justify-between p-4 sm:p-6 md:p-8">
                 <div class="flex items-center gap-3 sm:gap-4">
@@ -57,8 +57,8 @@
                 <a href="../pages/login/pagLogin.html" class="block text-center font-montserrat text-lg text-white py-3 hover:bg-tertiary transition-colors">Login</a>
             </div>
     
-            <div class="flex flex-grow flex-col items-center justify-center text-center px-4">
-                <h1 class="font-poppins text-4xl sm:text-5xl md:text-6xl font-bold text-white w-full max-w-lg leading-tight mb-20 md:mb-40">Bem-vindo ao site da Copa <span class="text-tertiary">Passa a Bola</span></h1>
+            <div class="flex flex-grow flex-col items-center justify-center text-center px-4 mt-28">
+                <h1 class="font-poppins text-3xl sm:text-4xl md:text-5xl font-semibold text-white w-full max-w-lg leading-tight mb-10 md:mb-24">Bem-vindo ao site da Copa <span class="text-white bg-tertiary inline-block px-3 py-1 mt-3 rounded-lg">Passa a Bola</span></h1>
                 <a href="#saiba-mais" class="font-poppins text-xl sm:text-2xl md:text-3xl font-medium text-white bg-secondary hover:bg-tertiary transition-colors duration-500 py-3 px-8 rounded-full">Saiba mais</a>
             </div>
         </div>
@@ -77,11 +77,39 @@
             </div>
         </section>
 
-        <section class="min-h-screen w-full flex flex-col items-center justify-center gap-10 sm:gap-12 bg-secondary py-16 px-4 sm:px-6 text-center">
-            <h2 class="font-poppins text-4xl sm:text-5xl md:text-6xl font-bold text-white">Como nosso site <br>funciona?</h2>
-            <div class="max-w-4xl mx-auto space-y-8">
-                <p class="font-montserrat text-lg sm:text-xl md:text-2xl text-white">Nosso site foi desenvolvido para reunir, em um só lugar, todas as informações e ferramentas que envolvem a Copa Passa Bola. De forma prática e intuitiva, jogadoras podem se cadastrar, criar ou buscar times para participar do campeonato, com perfis completos que incluem posição, características de jogo e estatísticas. Também é possível acompanhar a programação dos jogos, resultados, chaveamento das equipes e acessar vídeos dos melhores momentos das partidas.</p>
-                <p class="font-montserrat text-lg sm:text-xl md:text-2xl text-white">Para os torcedores, o site oferece uma experiência completa: é possível ver a tabela atualizada, conhecer os times e jogadoras, conferir conteúdos exclusivos e garantir produtos oficiais da Copa na loja virtual. Tudo isso com uma navegação simples, pensada para conectar ainda mais quem joga, organiza e apoia o futebol feminino.</p>
+        <section class="min-h-screen w-full flex items-center justify-center bg-secondary py-16 px-4 sm:px-6">
+            <div class="max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16">
+        
+                <div class="lg:w-1/3 text-center lg:text-left">
+                    <h2 class="font-poppins text-4xl sm:text-5xl md:text-6xl font-bold text-white">
+                        Como nosso site funciona?
+                    </h2>
+                    <p class="font-montserrat text-lg sm:text-xl text-white mt-4 opacity-90">
+                        Nossa plataforma conecta jogadoras e torcedores da Copa Passa Bola de forma simples e intuitiva.
+                    </p>
+                </div>
+        
+                <div class="lg:w-2/3 w-full flex flex-col gap-8">
+                    
+                    <div class="bg-white rounded-xl shadow-lg p-6 sm:p-8 text-left">
+                        <h3 class="font-poppins text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Para você, jogadora:</h3>
+                        <ul class="font-montserrat text-base sm:text-lg text-gray-600 space-y-3">
+                            <li><strong>Crie seu perfil:</strong> Mostre sua posição, estilo de jogo e estatísticas.</li>
+                            <li><strong>Monte ou encontre um time:</strong> Conecte-se com outras atletas para competir.</li>
+                            <li><strong>Acompanhe o campeonato:</strong> Acesse a tabela de jogos, resultados e os vídeos dos melhores momentos.</li>
+                        </ul>
+                    </div>
+        
+                    <div class="bg-white rounded-xl shadow-lg p-6 sm:p-8 text-left">
+                        <h3 class="font-poppins text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Para você, torcedor(a):</h3>
+                        <ul class="font-montserrat text-base sm:text-lg text-gray-600 space-y-3">
+                            <li><strong>Siga de perto:</strong> Veja a tabela atualizada, o chaveamento e os resultados.</li>
+                            <li><strong>Conheça as equipes:</strong> Explore os perfis dos times e das jogadoras.</li>
+                            <li><strong>Mostre sua paixão:</strong> Garanta produtos oficiais da Copa em nossa loja virtual.</li>
+                        </ul>
+                    </div>
+        
+                </div>
             </div>
         </section>
     </main>
