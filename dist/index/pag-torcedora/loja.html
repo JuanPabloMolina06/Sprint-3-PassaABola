@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copa PAB - Loja</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'jaldi': ['Jaldi', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#ffffff',
+                        'secondary': '#8461C9', // Roxo principal
+                        'tertiary': '#EE4D9B',   // Rosa
+                        'quaternary': '#6EAA38', // Verde
+                        'quinary': '#A089CE',    // Roxo claro (placar)
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <header class="bg-secondary text-primary shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
+            
+            <a href="../index.html" class="flex items-center gap-3">
+                <img src="/dist/img/logoCopaPAB.svg" alt="Logo do canal Passa a Bola" class="h-12 w-12">
+                <h1 class="font-poppins text-2xl font-semibold text-primary" style="text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);">Copa PAB</h1>
+            </a>
+            
+            <ul class="hidden md:flex items-center gap-8">
+                <li><a href="../pagTorcedora.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Home</a></li>
+                <li><a href="../pag-torcedora/chaveamento.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Chaveamento</a></li>
+                <li><a href="../pag-torcedora/mapa.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Mapa</a></li>
+                <li><a href="../pag-torcedora/loja.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Loja</a></li>
+            </ul>
+    
+            <div class="hidden md:block">
+                <a href="../index.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Logout</a>
+            </div>
+    
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-primary focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    
+        <div id="mobile-menu" class="hidden md:hidden bg-secondary">
+          <ul class="flex flex-col items-center gap-4 py-4">
+              <li><a href="../pagTorcedora.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Home</a></li>
+              <li><a href="../pag-torcedora/chaveamento.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Chaveamento</a></li>
+              <li><a href="../pag-torcedora/mapa.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Mapa</a></li>
+              <li><a href="../pag-torcedora/loja.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Loja</a></li>
+              <li><a href="./index.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary mt-2">Logout</a></li>
+          </ul>
+      </div>
+    </header>
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+            <aside class="lg:col-span-3 xl:col-span-2">
+                <div class="bg-white p-5 rounded-lg shadow-sm sticky top-8">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 border-b pb-2">Filtros</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-2">Categoria</h4>
+                            <div class="space-y-1">
+                                <label class="flex items-center"><input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-pink-600 focus:ring-pink-500"> <span class="ml-2 text-gray-600">Equipamentos</span></label>
+                                <label class="flex items-center"><input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-pink-600 focus:ring-pink-500"> <span class="ml-2 text-gray-600">Vestuário</span></label>
+                                <label class="flex items-center"><input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-pink-600 focus:ring-pink-500"> <span class="ml-2 text-gray-600">Serviços</span></label>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-2">Preço (Pontos)</h4>
+                            <input type="range" min="0" max="100" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="lg:col-span-6 xl:col-span-7">
+                <h1 class="text-4xl font-extrabold text-gray-900 mb-6">Explore a Loja</h1>
+                <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 p-5">
+                    </div>
+            </main>
+
+            <aside class="lg:col-span-3">
+                <div class="bg-white p-5 rounded-lg shadow-sm sticky top-8">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 border-b pb-2 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6 mr-2"><path d="M1 1.75A.75.75 0 011.75 1h1.628a1.75 1.75 0 011.734 1.51L5.18 3a6.75 6.75 0 016.563 8.839A6.72 6.72 0 0111.25 12H5.181a.75.75 0 01-.744-.658L3.2 4.5h10.33a.75.75 0 010 1.5H4.28l.43 2.23A4.75 4.75 0 1010 14.5a4.73 4.73 0 001.07-2.916a.75.75 0 011.492.166A6.23 6.23 0 0110 16a6.25 6.25 0 01-6.235-5.74L2.09 3.26A3.25 3.25 0 00-.75 1.75H.75A.75.75 0 011 1.75zM10 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM16 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" /></svg>
+                        Meu Carrinho
+                    </h3>
+                    
+                    <div class="bg-teal-50 border border-teal-200 text-teal-800 p-3 rounded-lg text-center mb-4">
+                        <p class="text-sm">Seu saldo é de</p>
+                        <p id="player-points" class="text-2xl font-bold">1.250 Pontos</p>
+                    </div>
+
+                    <div id="cart-items" class="space-y-3 mb-4">
+                        </div>
+                    
+                    <div class="border-t pt-4 space-y-2">
+                         <div class="flex justify-between font-semibold text-gray-600">
+                            <span>Subtotal</span>
+                            <span id="cart-subtotal">0 Pontos</span>
+                        </div>
+                         <div class="flex justify-between font-bold text-gray-800 text-lg">
+                            <span>Total</span>
+                            <span id="cart-total">0 Pontos</span>
+                        </div>
+                    </div>
+
+                    <button id="checkout-button" class="w-full bg-pink-600 text-white font-bold py-3 rounded-lg mt-6 hover:bg-pink-700 transition-all transform hover:scale-105">
+                        Finalizar Compra
+                    </button>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const products = [
+                { id: 1, name: 'Camisa de time', category: 'Vestuário', price: 40, imageSrc: '' },
+                { id: 2, name: 'Copo térmico', category: 'Equipamentos', price: 70, imageSrc: '' },
+                { id: 3, name: 'Foto com jogadora', category: 'Serviços', price: 100, imageSrc: '' },
+                { id: 4, name: 'Bola do torneio', category: 'Equipamentos', price: 85, imageSrc: '' },
+                { id: 5, name: 'Jaqueta de time', category: 'Equipamentos', price: 60, imageSrc: '' },
+                { id: 6, name: 'Chaveiros de times', category: 'Equipamentos', price: 20, imageSrc: '' },
+                { id: 7, name: 'Chuteiras Personalizadas', category: 'Equipamentos', price: 125, imageSrc: '/dist/img/chuteira.svg' },
+                { id: 8, name: 'Camisetas exclusivas', category: 'Vestuário', price: 150, imageSrc: '/dist/img/camisapersonalizada.svg' },
+            ];
+            let cart = [];
+            let playerPoints = 1250;
+
+            const productGrid = document.getElementById('product-grid');
+            const cartItemsContainer = document.getElementById('cart-items');
+            const playerPointsDisplay = document.getElementById('player-points');
+            const cartSubtotalDisplay = document.getElementById('cart-subtotal');
+            const cartTotalDisplay = document.getElementById('cart-total');
+            const checkoutButton = document.getElementById('checkout-button');
+            const mainContent = document.querySelector('main');
+
+            function renderProducts() {
+                productGrid.innerHTML = '';
+                products.forEach(product => {
+                    const productCard = `
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden group transition-transform transform hover:-translate-y-1">
+                            <img src="${product.imageSrc}" alt="${product.name}" class="w-full h-48 object-cover">
+                            <div class="p-4">
+                                <h3 class="text-lg font-bold text-gray-800">${product.name}</h3>
+                                <p class="text-sm text-gray-500 mb-3">${product.category}</p>
+                                <div class="flex items-center justify-between">
+                                    <p class="text-lg font-semibold text-teal-600 flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 mr-1 text-yellow-500"><path fill-rule="evenodd" d="M10.868 2.884c.321-.772 1.305-.772 1.626 0l1.373 3.31a1.25 1.25 0 00.944.685l3.475.505c.82.12 1.147 1.132.553 1.714l-2.515 2.452a1.25 1.25 0 00-.36 1.107l.593 3.46c.14 1.116-.957 1.696-1.632.85l-3.106-1.633a1.25 1.25 0 00-1.162 0L6.4 17.967c-.675.846-1.772.266-1.632-.85l.593-3.46a1.25 1.25 0 00-.36-1.107L2.486 9.1c-.594-.582-.267-1.594.553-1.714l3.475-.505a1.25 1.25 0 00.944-.685l1.373-3.31z" clip-rule="evenodd" /></svg>
+                                        ${product.price} Pontos
+                                    </p>
+                                    <button data-product-id="${product.id}" class="add-to-cart-btn bg-pink-600 text-white px-3 py-1 rounded-full text-sm font-semibold hover:bg-pink-700 transition-colors">Adicionar</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    productGrid.innerHTML += productCard;
+                });
+            }
+
+            function renderCart() {
+                cartItemsContainer.innerHTML = '';
+                let totalPoints = 0;
+
+                if (cart.length === 0) {
+                    cartItemsContainer.innerHTML = '<p class="text-center text-gray-500">Seu carrinho está vazio.</p>';
+                } else {
+                    cart.forEach((item, index) => {
+                        const cartItemHTML = `
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <img src="${item.imageSrc}" class="w-12 h-12 rounded-md object-cover mr-3">
+                                    <div>
+                                        <p class="font-semibold text-gray-800">${item.name}</p>
+                                        <p class="text-sm text-gray-500">${item.price} Pontos</p>
+                                    </div>
+                                </div>
+                                <button data-cart-index="${index}" class="remove-from-cart-btn text-gray-400 hover:text-red-500 text-2xl font-bold">&times;</button>
+                            </div>
+                        `;
+                        cartItemsContainer.innerHTML += cartItemHTML;
+                        totalPoints += item.price;
+                    });
+                }
+                
+                cartSubtotalDisplay.textContent = `${totalPoints} Pontos`;
+                cartTotalDisplay.textContent = `${totalPoints} Pontos`;
+                playerPointsDisplay.textContent = `${playerPoints} Pontos`;
+
+                if (totalPoints > 0 && totalPoints <= playerPoints) {
+                    checkoutButton.disabled = false;
+                    checkoutButton.classList.remove('opacity-50', 'cursor-not-allowed');
+                } else {
+                    checkoutButton.disabled = true;
+                    checkoutButton.classList.add('opacity-50', 'cursor-not-allowed');
+                }
+            }
+
+            function addToCart(productId) {
+                const productToAdd = products.find(p => p.id === productId);
+                if (productToAdd) {
+                    cart.push(productToAdd);
+                    renderCart();
+                }
+            }
+
+            function removeFromCart(cartIndex) {
+                cart.splice(cartIndex, 1);
+                renderCart();
+            }
+
+            function finalizePurchase() {
+                const totalCost = cart.reduce((total, item) => total + item.price, 0);
+
+                if (playerPoints >= totalCost) {
+                    playerPoints -= totalCost;
+                    cart = [];
+                    renderCart();
+                    alert('Compra realizada com sucesso!');
+                } else {
+                    alert('Saldo de pontos insuficiente para completar a compra.');
+                }
+            }
+
+            mainContent.addEventListener('click', (event) => {
+                if (event.target && event.target.classList.contains('add-to-cart-btn')) {
+                    const productId = parseInt(event.target.dataset.productId);
+                    addToCart(productId);
+                }
+            });
+
+            cartItemsContainer.addEventListener('click', (event) => {
+                if (event.target && event.target.classList.contains('remove-from-cart-btn')) {
+                    const cartIndex = parseInt(event.target.dataset.cartIndex);
+                    removeFromCart(cartIndex);
+                }
+            });
+
+            checkoutButton.addEventListener('click', finalizePurchase);
+
+            renderProducts();
+            renderCart();
+        });
+    </script>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>

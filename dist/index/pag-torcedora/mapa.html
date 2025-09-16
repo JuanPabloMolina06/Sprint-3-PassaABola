@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copa PAB - Mapa</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'jaldi': ['Jaldi', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#ffffff',
+                        'secondary': '#8461C9', // Roxo principal
+                        'tertiary': '#EE4D9B',   // Rosa
+                        'quaternary': '#6EAA38', // Verde
+                        'quinary': '#A089CE',    // Roxo claro (placar)
+                        'senary': '#169F64',     // Verde claro ('gramado')
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen w-full flex flex-col bg-gray-50">
+    <header class="bg-secondary text-primary shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
+            
+            <a href="../index.html" class="flex items-center gap-3">
+                <img src="/dist/img/logoCopaPAB.svg" alt="Logo do canal Passa a Bola" class="h-12 w-12">
+                <h1 class="font-poppins text-2xl font-semibold text-primary" style="text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);">Copa PAB</h1>
+            </a>
+            
+            <ul class="hidden md:flex items-center gap-8">
+                <li><a href="../pagTorcedora.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Home</a></li>
+                <li><a href="../pag-torcedora/chaveamento.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Chaveamento</a></li>
+                <li><a href="../pag-torcedora/mapa.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Mapa</a></li>
+                <li><a href="../pag-torcedora/loja.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Loja</a></li>
+            </ul>
+
+            <div class="hidden md:block">
+                <a href="../index.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Logout</a>
+            </div>
+
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-primary focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-secondary">
+            <ul class="flex flex-col items-center gap-4 py-4">
+                <li><a href="../pagTorcedora.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Home</a></li>
+                <li><a href="../pag-torcedora/chaveamento.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Chaveamento</a></li>
+                <li><a href="../pag-torcedora/mapa.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Mapa</a></li>
+                <li><a href="../pag-torcedora/loja.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Loja</a></li>
+                <li><a href="../index.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary mt-2">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container mx-auto py-10 px-4">
+        
+        <h1 class="text-center mb-8 text-4xl md:text-5xl font-bold font-jaldi text-secondary">LOCAL DO EVENTO</h1>
+    
+        <div class="bg-senary p-4 lg:p-10 rounded-lg shadow-xl">
+            
+            <div class="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-10">
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
+                    
+                    <div class="w-[15rem] h-[20rem] flex flex-col justify-between border-4 border-primary shadow-lg relative">
+                        <div class="absolute top-0 left-0 h-7 w-7 border-primary rounded-br-full border-r-4 border-b-4"></div>
+                        <div class="absolute top-0 right-0 h-7 w-7 border-primary rounded-bl-full border-l-4 border-b-4"></div>
+                        <div class="absolute bottom-0 left-0 h-7 w-7 border-primary rounded-tr-full border-r-4 border-t-4"></div>
+                        <div class="absolute bottom-0 right-0 h-7 w-7 border-primary rounded-tl-full border-l-4 border-t-4"></div>
+                        <div class="flex justify-center pt-2">
+                            <div class="h-10 w-20 flex flex-col items-center border-primary border-r-4 border-l-4 border-b-4">
+                                <div class="h-4 w-10 border-primary border-r-4 border-l-4 border-b-4"></div>
+                                <div class="h-2 w-2 bg-primary rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="relative h-1 w-full flex justify-center bg-primary"><div class="absolute h-4 w-4 bg-primary rounded-full -translate-y-[6px]"></div></div>
+                        <div class="flex justify-center pb-2">
+                            <div class="h-10 w-20 flex flex-col-reverse items-center border-primary border-r-4 border-l-4 border-t-4">
+                                <div class="h-4 w-10 border-primary border-r-4 border-l-4 border-t-4"></div>
+                                <div class="h-2 w-2 bg-primary rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="w-[15rem] h-[20rem] flex flex-col justify-between border-4 border-primary shadow-lg relative">
+                        <div class="absolute top-0 left-0 h-7 w-7 border-primary rounded-br-full border-r-4 border-b-4"></div>
+                        <div class="absolute top-0 right-0 h-7 w-7 border-primary rounded-bl-full border-l-4 border-b-4"></div>
+                        <div class="absolute bottom-0 left-0 h-7 w-7 border-primary rounded-tr-full border-r-4 border-t-4"></div>
+                        <div class="absolute bottom-0 right-0 h-7 w-7 border-primary rounded-tl-full border-l-4 border-t-4"></div>
+                        <div class="flex justify-center pt-2">
+                            <div class="h-10 w-20 flex flex-col items-center border-primary border-r-4 border-l-4 border-b-4">
+                                <div class="h-4 w-10 border-primary border-r-4 border-l-4 border-b-4"></div>
+                                <div class="h-2 w-2 bg-primary rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="relative h-1 w-full flex justify-center bg-primary"><div class="absolute h-4 w-4 bg-primary rounded-full -translate-y-[6px]"></div></div>
+                        <div class="flex justify-center pb-2">
+                            <div class="h-10 w-20 flex flex-col-reverse items-center border-primary border-r-4 border-l-4 border-t-4">
+                                <div class="h-4 w-10 border-primary border-r-4 border-l-4 border-t-4"></div>
+                                <div class="h-2 w-2 bg-primary rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="w-[15rem] h-[20rem] flex flex-col justify-between border-4 border-primary shadow-lg relative">
+                        <div class="absolute top-0 left-0 h-7 w-7 border-primary rounded-br-full border-r-4 border-b-4"></div>
+                        <div class="absolute top-0 right-0 h-7 w-7 border-primary rounded-bl-full border-l-4 border-b-4"></div>
+                        <div class="absolute bottom-0 left-0 h-7 w-7 border-primary rounded-tr-full border-r-4 border-t-4"></div>
+                        <div class="absolute bottom-0 right-0 h-7 w-7 border-primary rounded-tl-full border-l-4 border-t-4"></div>
+                        <div class="flex justify-center pt-2">
+                            <div class="h-10 w-20 flex flex-col items-center border-primary border-r-4 border-l-4 border-b-4">
+                                <div class="h-4 w-10 border-primary border-r-4 border-l-4 border-b-4"></div>
+                                <div class="h-2 w-2 bg-primary rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="relative h-1 w-full flex justify-center bg-primary"><div class="absolute h-4 w-4 bg-primary rounded-full -translate-y-[6px]"></div></div>
+                        <div class="flex justify-center pb-2">
+                            <div class="h-10 w-20 flex flex-col-reverse items-center border-primary border-r-4 border-l-4 border-t-4">
+                                <div class="h-4 w-10 border-primary border-r-4 border-l-4 border-t-4"></div>
+                                <div class="h-2 w-2 bg-primary rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="w-[15rem] h-[20rem] flex flex-col justify-between border-4 border-primary shadow-lg relative">
+                        <div class="absolute top-0 left-0 h-7 w-7 border-primary rounded-br-full border-r-4 border-b-4"></div>
+                        <div class="absolute top-0 right-0 h-7 w-7 border-primary rounded-bl-full border-l-4 border-b-4"></div>
+                        <div class="absolute bottom-0 left-0 h-7 w-7 border-primary rounded-tr-full border-r-4 border-t-4"></div>
+                        <div class="absolute bottom-0 right-0 h-7 w-7 border-primary rounded-tl-full border-l-4 border-t-4"></div>
+                        <div class="flex justify-center pt-2">
+                            <div class="h-10 w-20 flex flex-col items-center border-primary border-r-4 border-l-4 border-b-4">
+                                <div class="h-4 w-10 border-primary border-r-4 border-l-4 border-b-4"></div>
+                                <div class="h-2 w-2 bg-primary rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="relative h-1 w-full flex justify-center bg-primary"><div class="absolute h-4 w-4 bg-primary rounded-full -translate-y-[6px]"></div></div>
+                        <div class="flex justify-center pb-2">
+                            <div class="h-10 w-20 flex flex-col-reverse items-center border-primary border-r-4 border-l-4 border-t-4">
+                                <div class="h-4 w-10 border-primary border-r-4 border-l-4 border-t-4"></div>
+                                <div class="h-2 w-2 bg-primary rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex w-full lg:max-w-[40rem] flex-col gap-10">
+                    <div class="w-full h-[20rem] flex justify-between border-4 border-primary shadow-lg relative">
+                        <div class="absolute top-0 left-0 h-12 w-12 border-primary rounded-br-full border-r-4 border-b-4"></div>
+                        <div class="absolute bottom-0 left-0 h-12 w-12 border-primary rounded-tr-full border-t-4 border-r-4"></div>
+                        <div class="absolute top-0 right-0 h-12 w-12 border-primary rounded-bl-full border-l-4 border-b-4"></div>
+                        <div class="absolute bottom-0 right-0 h-12 w-12 border-primary rounded-tl-full border-t-4 border-l-4"></div>
+                        <div class="h-full flex flex-col justify-center items-center">
+                            <div class="h-36 w-20 flex justify-center items-center border-primary border-r-4 border-t-4 border-b-4">
+                                <div class="h-20 w-8 border-primary border-r-4 border-t-4 border-b-4"></div>
+                                <div class="h-3 w-3 bg-primary rounded-full ml-2"></div>
+                            </div>
+                        </div>
+                        <div class="relative w-1 h-full flex items-center bg-primary"><div class="absolute left-1/2 -translate-x-1/2 h-5 w-5 bg-primary rounded-full"></div></div>
+                        <div class="h-full flex flex-col justify-center items-center">
+                            <div class="h-36 w-20 flex justify-center items-center border-primary border-l-4 border-t-4 border-b-4">
+                                <div class="h-3 w-3 bg-primary rounded-full mr-2"></div>
+                                <div class="h-20 w-8 border-primary border-l-4 border-t-4 border-b-4"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full h-[20rem] flex justify-between border-4 border-primary shadow-lg relative">
+                        <div class="absolute top-0 left-0 h-12 w-12 border-primary rounded-br-full border-r-4 border-b-4"></div>
+                        <div class="absolute bottom-0 left-0 h-12 w-12 border-primary rounded-tr-full border-t-4 border-r-4"></div>
+                        <div class="absolute top-0 right-0 h-12 w-12 border-primary rounded-bl-full border-l-4 border-b-4"></div>
+                        <div class="absolute bottom-0 right-0 h-12 w-12 border-primary rounded-tl-full border-t-4 border-l-4"></div>
+                        <div class="h-full flex flex-col justify-center items-center">
+                            <div class="h-36 w-20 flex justify-center items-center border-primary border-r-4 border-t-4 border-b-4">
+                                <div class="h-20 w-8 border-primary border-r-4 border-t-4 border-b-4"></div>
+                                <div class="h-3 w-3 bg-primary rounded-full ml-2"></div>
+                            </div>
+                        </div>
+                        <div class="relative w-1 h-full flex items-center bg-primary"><div class="absolute left-1/2 -translate-x-1/2 h-5 w-5 bg-primary rounded-full"></div></div>
+                        <div class="h-full flex flex-col justify-center items-center">
+                            <div class="h-36 w-20 flex justify-center items-center border-primary border-l-4 border-t-4 border-b-4">
+                                <div class="h-3 w-3 bg-primary rounded-full mr-2"></div>
+                                <div class="h-20 w-8 border-primary border-l-4 border-t-4 border-b-4"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="relative flex items-center justify-center p-8 sm:p-12 bg-gray-50 mt-10">
+        <a href="#" class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2">
+             <img src="../../img/logoCopaPAB_colorido.svg" alt="Logo do canal Passa a Bola colorida" class="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32">
+        </a>
+        <h2 class="font-poppins text-2xl sm:text-3xl lg:text-4xl font-bold text-quaternary">Passa a Bola</h2>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
