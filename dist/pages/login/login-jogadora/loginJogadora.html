@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copa PAB - Login Jogadora</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'jaldi': ['Jaldi', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#ffffff',
+                        'secondary': '#8461C9',
+                        'tertiary': '#EE4D9B',
+                        'quaternary': '#6EAA38',
+                        'quinary': '#A089CE',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-cover bg-center bg-no-repeat min-h-screen flex flex-col font-montserrat" style="background-image: url('/dist/public/BG_Login.png');">
+    <div class="fixed inset-0 bg-black bg-opacity-50"></div>
+
+    <header class="text-primary shadow-md sticky top-0 z-50 mb-5">
+        <nav class="container mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
+            <a href="/dist/pages/index.html" class="flex items-center gap-3">
+                <img src="/dist/public/logoCopaPAB.svg" alt="Logo do canal Passa a Bola" class="h-12 w-12">
+                <h1 class="font-poppins text-2xl font-semibold text-primary" style="text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);">Copa PAB</h1>
+            </a>
+            <div class="hidden md:block">
+                <a href="../pagLogin.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Voltar</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-primary focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-transparent">
+            <ul class="flex flex-col items-center gap-4 py-4">
+                <li><a href="../pagLogin.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary mt-2">Voltar</a></li>
+            </ul>
+        </div>
+    </header>
+        
+    <main class="flex-grow flex items-center justify-center p-4">
+        <div class="w-full max-w-lg bg-black/30 backdrop-blur-xl rounded-3xl border border-white/20 p-8 sm:p-12 shadow-2xl text-white">
+            
+            <div class="text-center mb-8">
+                <h1 class="font-poppins text-3xl sm:text-4xl font-bold mb-3 text-white">LOGIN</h1>
+                <p class="text-gray-300">Você está efetuando seu login como <span class="font-bold text-white">JOGADORA</span></p>
+            </div>
+
+            <form id="login-form-jogadora" class="flex flex-col gap-5">
+                <div>
+                    <label for="nome" class="block text-gray-200 text-sm font-semibold mb-2">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Nome da jogadora..." class="w-full bg-black/20 border border-white/20 rounded-xl py-3 px-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-secondary transition">
+                </div>
+                
+                <div>
+                    <label for="email" class="block text-gray-200 text-sm font-semibold mb-2">Email</label>
+                    <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" class="w-full bg-black/20 border border-white/20 rounded-xl py-3 px-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-secondary transition" required>
+                </div>
+
+                <div>
+                    <label for="senha" class="block text-gray-200 text-sm font-semibold mb-2">Senha</label>
+                    <input type="password" id="senha" name="senha" placeholder="Senha da jogadora..." class="w-full bg-black/20 border border-white/20 rounded-xl py-3 px-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-secondary transition" required>
+                </div>
+                
+                <button type="submit" class="w-full bg-tertiary text-white font-bold py-4 rounded-full text-lg transition-colors duration-300 transform hover:scale-105 hover:bg-opacity-90 mt-4 text-center">
+                    Entrar
+                </button>
+            </form>
+
+            <p class="text-center text-gray-300 text-sm mt-8">
+                Ainda não tem conta? 
+                <a href="./cadastroJogadora.html" class="font-bold text-tertiary hover:underline">Cadastre-se</a>
+            </p>
+
+        </div>
+    </main>
+
+    <script>
+        const loginForm = document.getElementById('login-form-jogadora');
+
+        loginForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+
+            const jogadoras = JSON.parse(localStorage.getItem('jogadoras')) || [];
+
+            const jogadoraEncontrada = jogadoras.find(user => user.email === email && user.senha === senha);
+
+            if (jogadoraEncontrada) {
+                localStorage.setItem('jogadoraLogada', JSON.stringify(jogadoraEncontrada));
+                
+                alert('Login bem-sucedido!');
+                window.location.href = '/dist/pages/pag-jogadora/pagJogadora.html';
+            } else {
+                alert('Email ou senha incorretos!');
+            }
+        });
+    </script>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+    
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

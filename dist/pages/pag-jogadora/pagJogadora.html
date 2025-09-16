@@ -41,22 +41,23 @@
         <nav class="container mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
             
             <a href="../index.html" class="flex items-center gap-3">
-                <img src="/dist/img/logoCopaPAB.svg" alt="Logo do canal Passa a Bola" class="h-12 w-12">
+                <img src="/dist/public/logoCopaPAB.svg" alt="Logo do canal Passa a Bola" class="h-12 w-12">
                 <h1 class="font-poppins text-2xl font-semibold text-primary" style="text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);">Copa PAB</h1>
             </a>
             
             <ul class="hidden md:flex items-center gap-8">
-                <li><a href="../pagJogadora.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Home</a></li>
-                <li><a href="../index/pag-torcedora/chaveamento.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Chaveamento</a></li>
-                <li><a href="../index/pag-torcedora/mapa.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Mapa</a></li>
-                <li><a href="../index/pag-torcedora/loja.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Loja</a></li>
+                <li><a href="./pagJogadora.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Home</a></li>
+                <li><a href="./chaveamento.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Chaveamento</a></li>
+                <li><a href="./campeonato.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Campeonato</a></li>
+                <li><a href="./mapa.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Mapa</a></li>
+                <li><a href="./loja.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Loja</a></li>
                 <li><a href="./noticias.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Noticias</a></li>
             </ul>
-    
+
             <div class="hidden md:block">
-                <a href="./index.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Logout</a>
+                <a href="../index.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Logout</a>
             </div>
-    
+
             <div class="md:hidden">
                 <button id="menu-btn" class="text-primary focus:outline-none">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -65,21 +66,22 @@
                 </button>
             </div>
         </nav>
-    
+
         <div id="mobile-menu" class="hidden md:hidden bg-secondary">
-          <ul class="flex flex-col items-center gap-4 py-4">
-              <li><a href="./pagJogadora.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Home</a></li>
-              <li><a href="../index/pag-torcedora/chaveamento.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Chaveamento</a></li>
-              <li><a href="../index/pag-torcedora/mapa.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Mapa</a></li>
-              <li><a href="../index/pag-torcedora/loja.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Loja</a></li>
-              <li><a href="./noticias.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Noticias</a></li>
-              <li><a href="./index.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary mt-2">Logout</a></li>
-          </ul>
-      </div>
+            <ul class="flex flex-col items-center gap-4 py-4">
+                <li><a href="./pagJogadora.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Home</a></li>
+                <li><a href="./chaveamento.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Chaveamento</a></li>
+                <li><a href="./campeonato.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Campeonato</a></li>
+                <li><a href="./mapa.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Mapa</a></li>
+                <li><a href="./loja.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Loja</a></li>
+                <li><a href="./noticias.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Noticias</a></li>
+                <li><a href="../index.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary mt-2">Logout</a></li>
+            </ul>
+        </div>
     </header>
 
     <main class="relative">
-        <img src="../img/BG_pagJogadora.jpg" alt="Jogadoras comemorando vitória" class="w-full object-cover h-[50vh] sm:h-[60vh] lg:h-[calc(100vh-80px)]">
+        <img src="/dist/public/BG_pagJogadora.jpg" alt="Jogadoras comemorando vitória" class="w-full object-cover h-[50vh] sm:h-[60vh] lg:h-[calc(100vh-80px)]">
         <div class="absolute inset-0 bg-black bg-opacity-30"></div>
     </main>
 
@@ -88,7 +90,7 @@
     <section class="min-h-40 bg-secondary py-10">
         <h2 class="pb-10 font-jaldi text-3xl text-center text-primary font-light">JOGOS DO CAMPEONATO</h2>
         
-        <div class="flex space-x-6 overflow-x-hidden pb-4 px-4 sm:px-8 snap-x snap-mandatory">
+        <div class="flex space-x-6 overflow-x-auto pb-4 px-4 sm:px-8 snap-x snap-mandatory">
             <div class="flex-shrink-0 w-full max-w-xs sm:max-w-sm bg-secondary p-4 snap-center">
                 <div class="font-jaldi text-2xl sm:text-3xl text-primary">
                     <p>06/09 | 09:00h</p>
@@ -163,7 +165,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
             <div class="relative group">
-                <img src="../img/selecaoBR-comemorando.jpg" alt="Celebrando com confetes" class="w-full h-auto rounded-lg shadow-lg">
+                <img src="/dist/public/selecaoBR-comemorando.jpg" alt="Celebrando com confetes" class="w-full h-auto rounded-lg shadow-lg">
                 <button class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 group-hover:bg-opacity-60 transition duration-300 rounded-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-pink-500 transform group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M8 5v14l11-7z" />
@@ -172,7 +174,7 @@
             </div>
             
             <div class="relative group">
-                <img src="../img/selecaoBR-comemorando.jpg" alt="Celebrando com confetes" class="w-full h-auto rounded-lg shadow-lg">
+                <img src="/dist/public/selecaoBR-comemorando.jpg" alt="Celebrando com confetes" class="w-full h-auto rounded-lg shadow-lg">
                 <button class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 group-hover:bg-opacity-60 transition duration-300 rounded-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-pink-500 transform group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M8 5v14l11-7z" />
@@ -180,7 +182,7 @@
                 </button>
             </div>
             <div class="relative group">
-                <img src="../img/selecaoBR-comemorando.jpg" alt="Celebrando com confetes" class="w-full h-auto rounded-lg shadow-lg">
+                <img src="/dist/public/selecaoBR-comemorando.jpg" alt="Celebrando com confetes" class="w-full h-auto rounded-lg shadow-lg">
                 <button class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 group-hover:bg-opacity-60 transition duration-300 rounded-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-pink-500 transform group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M8 5v14l11-7z" />
@@ -188,7 +190,7 @@
                 </button>
             </div>
              <div class="relative group">
-                <img src="../img/selecaoBR-comemorando.jpg" alt="Celebrando com confetes" class="w-full h-auto rounded-lg shadow-lg">
+                <img src="/dist/public/selecaoBR-comemorando.jpg" alt="Celebrando com confetes" class="w-full h-auto rounded-lg shadow-lg">
                 <button class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 group-hover:bg-opacity-60 transition duration-300 rounded-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-pink-500 transform group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M8 5v14l11-7z" />
@@ -196,7 +198,7 @@
                 </button>
             </div>
              <div class="relative group">
-                <img src="../img/selecaoBR-comemorando.jpg" alt="Celebrando com confetes" class="w-full h-auto rounded-lg shadow-lg">
+                <img src="/dist/public/selecaoBR-comemorando.jpg" alt="Celebrando com confetes" class="w-full h-auto rounded-lg shadow-lg">
                 <button class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 group-hover:bg-opacity-60 transition duration-300 rounded-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-pink-500 transform group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M8 5v14l11-7z" />
@@ -204,7 +206,7 @@
                 </button>
             </div>
              <div class="relative group">
-                <img src="../img/selecaoBR-comemorando.jpg" alt="Celebrando com confetes" class="w-full h-auto rounded-lg shadow-lg">
+                <img src="/dist/public/selecaoBR-comemorando.jpg" alt="Celebrando com confetes" class="w-full h-auto rounded-lg shadow-lg">
                 <button class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 group-hover:bg-opacity-60 transition duration-300 rounded-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-pink-500 transform group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M8 5v14l11-7z" />
@@ -226,22 +228,22 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             <div class="w-full transform hover:scale-105 transition-transform duration-300">
-                <img src="../img/card-jogadora.png" alt="Card da jogadora" class="w-full h-auto rounded-lg shadow-lg">
+                <img src="/dist/public/card-jogadora.png" alt="Card da jogadora" class="w-full h-auto rounded-lg shadow-lg">
             </div>
             <div class="w-full transform hover:scale-105 transition-transform duration-300">
-                <img src="../img/card-jogadora.png" alt="Card da jogadora" class="w-full h-auto rounded-lg shadow-lg">
+                <img src="/dist/public/card-jogadora.png" alt="Card da jogadora" class="w-full h-auto rounded-lg shadow-lg">
             </div>
             <div class="w-full transform hover:scale-105 transition-transform duration-300">
-                <img src="../img/card-jogadora.png" alt="Card da jogadora" class="w-full h-auto rounded-lg shadow-lg">
+                <img src="/dist/public/card-jogadora.png" alt="Card da jogadora" class="w-full h-auto rounded-lg shadow-lg">
             </div>
             <div class="w-full transform hover:scale-105 transition-transform duration-300">
-                <img src="../img/card-jogadora.png" alt="Card da jogadora" class="w-full h-auto rounded-lg shadow-lg">
+                <img src="/dist/public/card-jogadora.png" alt="Card da jogadora" class="w-full h-auto rounded-lg shadow-lg">
             </div>
             <div class="w-full transform hover:scale-105 transition-transform duration-300">
-                <img src="../img/card-jogadora.png" alt="Card da jogadora" class="w-full h-auto rounded-lg shadow-lg">
+                <img src="/dist/public/card-jogadora.png" alt="Card da jogadora" class="w-full h-auto rounded-lg shadow-lg">
             </div>
             <div class="w-full transform hover:scale-105 transition-transform duration-300">
-                <img src="../img/card-jogadora.png" alt="Card da jogadora" class="w-full h-auto rounded-lg shadow-lg">
+                <img src="/dist/public/card-jogadora.png" alt="Card da jogadora" class="w-full h-auto rounded-lg shadow-lg">
             </div>
         </div>
     </section>
@@ -250,7 +252,7 @@
     
     <footer class="relative flex items-center justify-center p-8 sm:p-12 bg-gray-50">
         <a href="#" class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2">
-             <img src="../img/logoCopaPAB_colorido.svg" alt="Logo do canal Passa a Bola colorida" class="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32">
+             <img src="/dist/public/logoCopaPAB_colorido.svg" alt="Logo do canal Passa a Bola colorida" class="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32">
         </a>
         <h2 class="font-poppins text-2xl sm:text-3xl lg:text-4xl font-bold text-quaternary">Passa a Bola</h2>
     </footer> 

@@ -34,28 +34,29 @@
         }
     </script>
 </head>
+
 <body>
+
     <header class="bg-secondary text-primary shadow-md sticky top-0 z-50">
         <nav class="container mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
             
             <a href="../index.html" class="flex items-center gap-3">
-                <img src="/dist/img/logoCopaPAB.svg" alt="Logo do canal Passa a Bola" class="h-12 w-12">
+                <img src="/dist/public/logoCopaPAB.svg" alt="Logo do canal Passa a Bola" class="h-12 w-12">
                 <h1 class="font-poppins text-2xl font-semibold text-primary" style="text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);">Copa PAB</h1>
             </a>
             
             <ul class="hidden md:flex items-center gap-8">
-                <li><a href="../pagJogadora.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Home</a></li>
-                <li><a href="../pag-jogadora/chaveamento.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Chaveamento</a></li>
-                <li><a href="./campeonato.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Campeonato</a></li>
-                <li><a href="../pag-jogadora/mapa.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Mapa</a></li>
-                <li><a href="../pag-jogadora/loja.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Loja</a></li>
-                <li><a href="../noticias.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Noticias</a></li>
+                <li><a href="./pagTorcedora.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Home</a></li>
+                <li><a href="./chaveamento.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Chaveamento</a></li>
+                <li><a href="./mapa.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Mapa</a></li>
+                <li><a href="./loja.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Loja</a></li>
+                <li><a href="./noticias.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Noticias</a></li>
             </ul>
-  
+    
             <div class="hidden md:block">
                 <a href="../index.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Logout</a>
             </div>
-  
+    
             <div class="md:hidden">
                 <button id="menu-btn" class="text-primary focus:outline-none">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -64,19 +65,17 @@
                 </button>
             </div>
         </nav>
-  
+    
         <div id="mobile-menu" class="hidden md:hidden bg-secondary">
-            <ul class="flex flex-col items-center gap-4 py-4">
-                <li><a href="../pagJogadora.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Home</a></li>
-                <li><a href="../pag-jogadora/chaveamento.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Chaveamento</a></li>
-                <li><a href="./campeonato.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Campeonato</a></li>
-                <li><a href="../pag-jogadora/mapa.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Mapa</a></li>
-                <li><a href="../pag-jogadora/loja.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Loja</a></li>
-                <li><a href="../noticias.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Noticias</a></li>
-                <li><a href="./index.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary mt-2">Logout</a></li>
-            </ul>
-        </div>
-        </div>
+          <ul class="flex flex-col items-center gap-4 py-4">
+              <li><a href="./pagTorcedora.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Home</a></li>
+              <li><a href="./chaveamento.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Chaveamento</a></li>
+              <li><a href="./mapa.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Mapa</a></li>
+              <li><a href="./loja.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Loja</a></li>
+              <li><a href="./noticias.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Noticias</a></li>
+              <li><a href="../index.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary mt-2">Logout</a></li>
+          </ul>
+      </div>
     </header>
 
     <div class="container mx-auto p-4 sm:p-6 lg:p-8">
@@ -147,14 +146,14 @@
         document.addEventListener('DOMContentLoaded', () => {
 
             const products = [
-                { id: 1, name: 'Camisa dry-fit', category: 'Vestuário', price: 40, imageSrc: '/dist/img/camisaDryFit.svg' },
-                { id: 2, name: 'Ensaio fotográfico', category: 'Serviços', price: 70, imageSrc: '/dist/img/ensaiofotografico.svg' },
-                { id: 3, name: 'Treino Especializado', category: 'Serviços', price: 100, imageSrc: '/dist/img/treinoespecializado.svg' },
-                { id: 4, name: '1h de Massagem', category: 'Serviços', price: 85, imageSrc: '/dist/img/massagem.svg' },
-                { id: 5, name: 'Avaliação física', category: 'Serviços', price: 60, imageSrc: '/dist/img/avaliacaofisica.svg' },
-                { id: 6, name: 'Kit nutrição', category: 'Equipamentos', price: 50, imageSrc: '/dist/img/kitnutricao.svg' },
-                { id: 7, name: 'Chuteiras Personalizadas', category: 'Equipamentos', price: 125, imageSrc: '/dist/img/chuteira.svg' },
-                { id: 8, name: 'Camisetas exclusivas', category: 'Vestuário', price: 150, imageSrc: '/dist/img/camisapersonalizada.svg' },
+                { id: 1, name: 'Camisa de time', category: 'Vestuário', price: 40, imageSrc: '/dist/public/camisaTimeE.svg' },
+                { id: 2, name: 'Copo térmico', category: 'Equipamentos', price: 70, imageSrc: '/dist/public/copoTermico.svg' },
+                { id: 3, name: 'Foto com jogadora', category: 'Serviços', price: 100, imageSrc: '/dist/public/fotoComJogadora.svg' },
+                { id: 4, name: 'Bola do torneio', category: 'Equipamentos', price: 85, imageSrc: '/dist/public/bolaOficialTorneio.svg' },
+                { id: 5, name: 'Jaqueta de time', category: 'Equipamentos', price: 60, imageSrc: '/dist/public/jaquetaDoTime.svg' },
+                { id: 6, name: 'Chaveiros de times', category: 'Equipamentos', price: 20, imageSrc: '/dist/public/chaveirosDoTime.svg' },
+                { id: 7, name: 'Chuteiras Personalizadas', category: 'Equipamentos', price: 125, imageSrc: '/dist/public/chuteira.svg' },
+                { id: 8, name: 'Camisetas exclusivas', category: 'Vestuário', price: 150, imageSrc: '/dist/public/camisapersonalizada.svg' },
             ];
             let cart = [];
             let playerPoints = 1250;
@@ -283,5 +282,6 @@
             mobileMenu.classList.toggle('hidden');
         });
     </script>
+
 </body>
 </html>

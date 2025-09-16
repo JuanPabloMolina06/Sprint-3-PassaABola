@@ -37,48 +37,48 @@
 
 <body>
 
-  <header class="bg-secondary text-primary shadow-md sticky top-0 z-50">
-    <nav class="container mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
-        
-        <a href="../index.html" class="flex items-center gap-3">
-            <img src="/dist/img/logoCopaPAB.svg" alt="Logo do canal Passa a Bola" class="h-12 w-12">
-            <h1 class="font-poppins text-2xl font-semibold text-primary" style="text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);">Copa PAB</h1>
-        </a>
-        
-        <ul class="hidden md:flex items-center gap-8">
-            <li><a href="../pagJogadora.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Home</a></li>
-            <li><a href="./chaveamento.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Chaveamento</a></li>
-            <li><a href="./campeonato.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Campeonato</a></li>
-            <li><a href="./mapa.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Mapa</a></li>
-            <li><a href="./loja.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Loja</a></li>
-            <li><a href="../noticias.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Noticias</a></li>
-        </ul>
+    <header class="bg-secondary text-primary shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
+            
+            <a href="../index.html" class="flex items-center gap-3">
+                <img src="/dist/public/logoCopaPAB.svg" alt="Logo do canal Passa a Bola" class="h-12 w-12">
+                <h1 class="font-poppins text-2xl font-semibold text-primary" style="text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);">Copa PAB</h1>
+            </a>
+            
+            <ul class="hidden md:flex items-center gap-8">
+                <li><a href="./pagJogadora.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Home</a></li>
+                <li><a href="./chaveamento.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Chaveamento</a></li>
+                <li><a href="./campeonato.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Campeonato</a></li>
+                <li><a href="./mapa.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Mapa</a></li>
+                <li><a href="./loja.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Loja</a></li>
+                <li><a href="./noticias.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Noticias</a></li>
+            </ul>
 
-        <div class="hidden md:block">
-            <a href="../index.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Logout</a>
+            <div class="hidden md:block">
+                <a href="../index.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Logout</a>
+            </div>
+
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-primary focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-secondary">
+            <ul class="flex flex-col items-center gap-4 py-4">
+                <li><a href="./pagJogadora.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Home</a></li>
+                <li><a href="./chaveamento.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Chaveamento</a></li>
+                <li><a href="./campeonato.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Campeonato</a></li>
+                <li><a href="./mapa.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Mapa</a></li>
+                <li><a href="./loja.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Loja</a></li>
+                <li><a href="./noticias.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Noticias</a></li>
+                <li><a href="../index.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary mt-2">Logout</a></li>
+            </ul>
         </div>
-
-        <div class="md:hidden">
-            <button id="menu-btn" class="text-primary focus:outline-none">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
-            </button>
-        </div>
-    </nav>
-
-    <div id="mobile-menu" class="hidden md:hidden bg-secondary">
-      <ul class="flex flex-col items-center gap-4 py-4">
-          <li><a href="./pagJogadora.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Home</a></li>
-          <li><a href="./pag-jogadora/chaveamento.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Chaveamento</a></li>
-          <li><a href="./pag-jogadora/campeonato.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Campeonato</a></li>
-          <li><a href="./pag-jogadora/mapa.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Mapa</a></li>
-          <li><a href="./pag-jogadora/loja.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Loja</a></li>
-          <li><a href="../noticias.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Noticias</a></li>
-          <li><a href="./index.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary mt-2">Logout</a></li>
-      </ul>
-  </div>
-</header>
+    </header>
 
 <section class="bg-gray-100">
     <h1 class="flex justify-center py-10 w-full font-poppins text-3xl md:text-5xl text-secondary font-bold">CHAVEAMENTO</h1>
