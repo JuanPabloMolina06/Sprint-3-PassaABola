@@ -25,23 +25,23 @@
         <nav class="container mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
             
             <a href="../index.html" class="flex items-center gap-3">
-                <img src="/dist/img/logoCopaPAB.svg" alt="Logo do canal Passa a Bola" class="h-12 w-12">
+                <img src="/dist/public/logoCopaPAB.svg" alt="Logo do canal Passa a Bola" class="h-12 w-12">
                 <h1 class="font-poppins text-2xl font-semibold text-primary" style="text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);">Copa PAB</h1>
             </a>
             
             <ul class="hidden md:flex items-center gap-8">
-                <li><a href="../pagJogadora.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Home</a></li>
+                <li><a href="./pagJogadora.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Home</a></li>
                 <li><a href="./chaveamento.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Chaveamento</a></li>
                 <li><a href="./campeonato.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Campeonato</a></li>
                 <li><a href="./mapa.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Mapa</a></li>
                 <li><a href="./loja.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Loja</a></li>
-                <li><a href="../noticias.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Noticias</a></li>
+                <li><a href="./noticias.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Noticias</a></li>
             </ul>
-    
+
             <div class="hidden md:block">
                 <a href="../index.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Logout</a>
             </div>
-    
+
             <div class="md:hidden">
                 <button id="menu-btn" class="text-primary focus:outline-none">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -50,37 +50,36 @@
                 </button>
             </div>
         </nav>
-    
+
         <div id="mobile-menu" class="hidden md:hidden bg-secondary">
-          <ul class="flex flex-col items-center gap-4 py-4">
-              <li><a href="./pagJogadora.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Home</a></li>
-              <li><a href="./pag-jogadora/chaveamento.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Chaveamento</a></li>
-              <li><a href="./pag-jogadora/campeonato.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Campeonato</a></li>
-              <li><a href="./pag-jogadora/mapa.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Mapa</a></li>
-              <li><a href="./pag-jogadora/loja.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Loja</a></li>
-              <li><a href="../noticias.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Noticias</a></li>
-              <li><a href="./index.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary mt-2">Logout</a></li>
-          </ul>
-      </div>
+            <ul class="flex flex-col items-center gap-4 py-4">
+                <li><a href="./pagJogadora.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Home</a></li>
+                <li><a href="./chaveamento.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Chaveamento</a></li>
+                <li><a href="./campeonato.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Campeonato</a></li>
+                <li><a href="./mapa.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Mapa</a></li>
+                <li><a href="./loja.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Loja</a></li>
+                <li><a href="./noticias.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Noticias</a></li>
+                <li><a href="../index.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary mt-2">Logout</a></li>
+            </ul>
+        </div>
     </header>
 
     <div class="container mx-auto px-4 py-10 flex flex-col md:flex-row gap-8">
         <aside class="w-full md:w-1/3 lg:w-1/4">
             <div class="bg-white p-6 rounded-2xl shadow-md sticky top-28">
-                <div class="flex flex-col items-center text-center border-b pb-6">
-                    <img src="https://i.imgur.com/your-team-logo.svg" alt="Logo do Time" class="h-24 w-24 rounded-full mb-4 border-4 border-secondary">
+                <div class="flex flex-col items-center justify-center text-center border-b pb-6">
+                    <div class="h-24 w-24 flex justify-center items-center rounded-full mb-4 border-4 border-secondary">
+                        <svg class="w-14 h-14 text-tertiary" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"></path>
+                        </svg>
+                    </div>
                     <h2 class="text-2xl font-bold text-gray-800">Guerreiras da Vila</h2>
                 </div>
-
                 <div class="mt-6 space-y-4 text-gray-600">
                     <div class="flex justify-between items-center"><span class="font-semibold">Região:</span><span class="font-medium text-gray-800">São Paulo, SP</span></div>
                     <div class="flex justify-between items-center"><span class="font-semibold">Jogadoras:</span><span class="font-mediu bg-secondary text-white px-2 py-0.5 rounded-full text-sm">12</span></div>
                     <div class="flex justify-between items-center"><span class="font-semibold">Capitã:</span><span class="font-medium text-gray-800">Nome da Capitã</span></div>
                     <div class="flex justify-between items-center"><span class="font-semibold">Próximo Jogo:</span><span class="font-medium text-gray-800">22/09/2025</span></div>
-                </div>
-
-                <div class="mt-8">
-                    <button class="w-full bg-secondary text-white font-bold py-3 rounded-xl text-lg hover:bg-quinary transition-colors">Editar Time</button>
                 </div>
             </div>
         </aside>
@@ -182,7 +181,13 @@
             const newPlayerCardHTML = `
                 <div class="bg-white p-6 rounded-2xl border-2 border-secondary text-center flex flex-col items-center shadow-sm">
                     <div class="w-24 h-24 mb-4">
-
+                        <div class="flex flex-col items-center justify-center text-center border-b pb-6">
+                            <div class="h-24 w-24 flex justify-center items-center rounded-full mb-4 border-4 border-secondary">
+                                <svg class="w-14 h-14 text-tertiary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"></path>
+                                </svg>
+                            </div>
+                        </div>
                     </div>
                     <h2 class="font-bold text-lg text-gray-900">${playerName}</h2>
                     <p class="text-gray-500 mb-2">${playerPosition}</p> <a href="#" class="text-secondary font-semibold underline hover:text-tertiary transition-colors">Estatisticas</a>

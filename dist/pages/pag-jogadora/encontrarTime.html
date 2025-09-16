@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Suas animações permanecem as mesmas */
         .card-exit-left { transform: translateX(-150%) rotate(-15deg); opacity: 0; }
         .card-exit-right { transform: translateX(150%) rotate(15deg); opacity: 0; }
         .card-enter { transform: scale(0.9); opacity: 0; }
@@ -40,36 +39,43 @@
 
     <header class="bg-secondary text-primary shadow-md sticky top-0 z-50">
         <nav class="container mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
+            
             <a href="../index.html" class="flex items-center gap-3">
-                <img src="/dist/img/logoCopaPAB.svg" alt="Logo do canal Passa a Bola" class="h-12 w-12">
+                <img src="/dist/public/logoCopaPAB.svg" alt="Logo do canal Passa a Bola" class="h-12 w-12">
                 <h1 class="font-poppins text-2xl font-semibold text-primary" style="text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);">Copa PAB</h1>
             </a>
+            
             <ul class="hidden md:flex items-center gap-8">
-                <li><a href="../pagJogadora.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Home</a></li>
+                <li><a href="./pagJogadora.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Home</a></li>
                 <li><a href="./chaveamento.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Chaveamento</a></li>
                 <li><a href="./campeonato.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Campeonato</a></li>
                 <li><a href="./mapa.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Mapa</a></li>
                 <li><a href="./loja.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Loja</a></li>
-                <li><a href="../noticias.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Noticias</a></li>
+                <li><a href="./noticias.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Noticias</a></li>
             </ul>
+
             <div class="hidden md:block">
                 <a href="../index.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Logout</a>
             </div>
+
             <div class="md:hidden">
                 <button id="menu-btn" class="text-primary focus:outline-none">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
                 </button>
             </div>
         </nav>
+
         <div id="mobile-menu" class="hidden md:hidden bg-secondary">
             <ul class="flex flex-col items-center gap-4 py-4">
                 <li><a href="./pagJogadora.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Home</a></li>
-                <li><a href="./pag-jogadora/chaveamento.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Chaveamento</a></li>
-                <li><a href="./pag-jogadora/campeonato.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Campeonato</a></li>
-                <li><a href="./pag-jogadora/mapa.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Mapa</a></li>
-                <li><a href="./pag-jogadora/loja.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Loja</a></li>
-                <li><a href="../noticias.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Noticias</a></li>
-                <li><a href="./index.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary mt-2">Logout</a></li>
+                <li><a href="./chaveamento.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Chaveamento</a></li>
+                <li><a href="./campeonato.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Campeonato</a></li>
+                <li><a href="./mapa.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Mapa</a></li>
+                <li><a href="./loja.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Loja</a></li>
+                <li><a href="./noticias.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Noticias</a></li>
+                <li><a href="../index.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary mt-2">Logout</a></li>
             </ul>
         </div>
     </header>
@@ -150,7 +156,6 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // --- LÓGICA DO MENU MOBILE ---
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         if(menuBtn) {
@@ -159,19 +164,16 @@
             });
         }
 
-        // --- LÓGICA DO "TINDER DE TIMES" E CHAT ---
-        // BANCO DE DADOS FAKE
         const teamsData = [
-            { name: 'Guerreiras da Vila', image: '/dist/img/guerreirasDaVila.jpg', description: 'Somos um time da zona sul de São Paulo, com 3 anos de história. Estamos em busca de uma atacante com estilo de jogo agressivo e veloz.' },
-            { name: 'Leoas do Asfalto', image: '/dist/img/leoasDoAsfalto.jpg', description: 'Equipe focada em técnica e posse de bola. Procuramos meio-campistas com boa visão de jogo.' },
-            { name: 'Trovão Azul', image: '/dist/img/trovaoAzul.jpg', description: 'Time novo na cidade, muita energia e vontade de vencer. Vagas abertas para todas as posições!' }
+            { name: 'Guerreiras da Vila', image: '/dist/public/guerreirasDaVila.jpg', description: 'Somos um time da zona sul de São Paulo, com 3 anos de história. Estamos em busca de uma atacante com estilo de jogo agressivo e veloz.' },
+            { name: 'Leoas do Asfalto', image: '/dist/public/leoasDoAsfalto.jpg', description: 'Equipe focada em técnica e posse de bola. Procuramos meio-campistas com boa visão de jogo.' },
+            { name: 'Trovão Azul', image: '/dist/public/trovaoAzul.jpg', description: 'Time novo na cidade, muita energia e vontade de vencer. Vagas abertas para todas as posições!' }
         ];
         const interestedTeamsData = [
             { id: 'time_y_123', name: 'Time Y', avatarUrl: 'https://i.imgur.com/placeholder1.jpg' },
             { id: 'time_z_456', name: 'Time Z', avatarUrl: 'https://i.imgur.com/placeholder2.jpg' }
         ];
 
-        // ELEMENTOS DO HTML
         const tinderView = document.getElementById('tinder-view');
         const chatView = document.getElementById('chat-view');
         const backToTinderBtn = document.getElementById('back-to-tinder-btn');
@@ -186,7 +188,6 @@
         
         let currentTeamIndex = 0;
 
-        // FUNÇÕES DE TROCA DE TELA
         function showTinderView() {
             chatView.classList.add('hidden');
             tinderView.classList.remove('hidden');
@@ -197,9 +198,8 @@
             chatView.classList.remove('hidden');
         }
 
-        // FUNÇÕES DE RENDERIZAÇÃO
         function renderInterestedTeams() {
-            if(!interestedTeamsList) return; // Garante que o código não quebre se o elemento não existir
+            if(!interestedTeamsList) return;
             interestedTeamsList.innerHTML = '';
             interestedTeamsData.forEach(team => {
                 const teamItemHTML = `
@@ -237,7 +237,6 @@
             }, 500);
         }
 
-        // EVENT LISTENERS
         if(acceptBtn) acceptBtn.addEventListener('click', () => showNextTeam('accept'));
         if(rejectBtn) rejectBtn.addEventListener('click', () => showNextTeam('reject'));
         if(backToTinderBtn) backToTinderBtn.addEventListener('click', showTinderView);
@@ -253,7 +252,6 @@
             });
         }
 
-        // INICIALIZAÇÃO
         renderTeam(currentTeamIndex);
         renderInterestedTeams();
     });
