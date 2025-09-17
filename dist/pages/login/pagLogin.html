@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolher a forma de login</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#ffffff',
+                        'secondary': '#8461C9',
+                        'tertiary': '#EE4D9B',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-cover bg-center bg-no-repeat bg-fixed flex flex-col min-h-screen" style="background-image: url('/dist/public/BG_Login.png');">
+    <div class="fixed inset-0 bg-black bg-opacity-50 -z-10"></div>
+
+    <header class="flex items-center gap-4 py-3 px-4 sm:py-4 sm:px-6 md:px-8">
+        <a href="../index.html">
+            <img src="/dist/public/logoCopaPAB.svg" alt="Logo do canal Passa a Bola" class="h-12 w-12 md:h-14 md:w-14">
+        </a>
+        <h1 class="font-poppins text-xl sm:text-2xl font-semibold text-white" style="text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">Copa PAB</h1>
+    </header>
+
+    <main class="flex flex-grow items-center justify-center p-4">
+        
+        <div class="w-full max-w-md sm:max-w-lg">
+            <div class="relative top-10 z-10 mx-auto w-fit rounded-2xl bg-secondary px-6 py-4 sm:px-8 sm:py-5">
+                <h1 class="font-montserrat text-xl sm:text-2xl md:text-3xl font-bold text-white text-center">ESCOLHA SEU LOGIN</h1>
+            </div>
+            
+            <div class="flex w-full flex-col items-center rounded-2xl bg-black/30 backdrop-blur-xl border border-white/20 pt-20 sm:pt-24 pb-10 sm:pb-12 px-4 sm:px-6 shadow-2xl">
+                <h2 class="font-poppins text-lg sm:text-xl md:text-2xl text-white text-center mb-8 sm:mb-10">Como você quer participar da nossa <br>comunidade?</h2>
+                
+                <div class="flex w-full max-w-xs flex-col gap-5 sm:gap-6">
+                    <a href="./login-jogadora/loginJogadora.html" class="group relative flex items-center justify-center rounded-full bg-transparent border-4 border-secondary p-3.5 sm:p-4 text-white transition-colors duration-300 hover:bg-secondary">
+                        <img src="/dist/public/bola-icon.svg" alt="ícone de bola" class="absolute left-4 h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 transition-transform duration-300 group-hover:rotate-12">
+                        <span class="font-poppins text-xl md:text-2xl font-semibold">Jogadora</span>
+                    </a>
+                    
+                    <a href="./login-torcedora/loginTorcedora.html" class="group relative flex items-center justify-center rounded-full bg-transparent border-4 border-tertiary p-3.5 sm:p-4 text-white transition-colors duration-300 hover:bg-tertiary">
+                        <img src="/dist/public/coracao-icon.svg" alt="ícone de coração" class="absolute left-4 h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 transition-transform duration-300 group-hover:scale-110">
+                        <span class="font-poppins text-xl md:text-2xl font-semibold">Torcedor(a)</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</body>
+</html>

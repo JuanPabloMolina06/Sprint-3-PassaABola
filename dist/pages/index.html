@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copa Passa a Bola com Tailwind CSS</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#ffffff',
+                        'secondary': '#8461C9',
+                        'tertiary': '#EE4D9B',
+                        'quaternary': '#6EAA38',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="text-base bg-gray-50">
+
+    <header class="relative h-[90vh] md:h-screen bg-cover bg-center bg-no-repeat" style="background-image: url('/dist/public/BG_teste.jpg');">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="relative z-10 flex h-full flex-col">
+            <nav class="flex items-center justify-between p-4 sm:p-6 md:p-8">
+                <div class="flex items-center gap-3 sm:gap-4">
+                    <img src="/dist/public/logoCopaPAB.svg" alt="Logo do canal Passa a Bola" class="h-14 w-14 sm:h-16 sm:w-16">
+                    <h1 class="font-poppins text-xl sm:text-2xl font-semibold text-white" style="text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">Copa PAB</h1>
+                </div>
+                <div class="hidden md:flex items-center">
+                    <a href="../pages/login/pagLogin.html" class="font-montserrat text-lg sm:text-xl text-white hover:text-tertiary transition-colors">Login</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-white focus:outline-none">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </nav>
+
+            <div id="mobile-menu" class="hidden md:hidden bg-secondary/80 backdrop-blur-sm">
+                <a href="../pages/login/pagLogin.html" class="block text-center font-montserrat text-lg text-white py-3 hover:bg-tertiary transition-colors">Login</a>
+            </div>
+    
+            <div class="flex flex-grow flex-col items-center justify-center text-center px-4 mt-28">
+                <h1 class="font-poppins text-3xl sm:text-4xl md:text-5xl font-semibold text-white w-full max-w-lg leading-tight mb-10 md:mb-24">Bem-vindo ao site da Copa <span class="text-white bg-tertiary inline-block px-3 py-1 mt-3 rounded-lg">Passa a Bola</span></h1>
+                <a href="#saiba-mais" class="font-poppins text-xl sm:text-2xl md:text-3xl font-medium text-white bg-secondary hover:bg-tertiary transition-colors duration-500 py-3 px-8 rounded-full">Saiba mais</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="saiba-mais" class="min-h-screen w-full flex flex-col justify-center py-16 px-4 sm:px-6">
+            <h2 class="font-poppins text-4xl sm:text-5xl md:text-6xl font-bold text-quaternary text-center mb-12 sm:mb-16">O que é a Copa <br>Passa a Bola?</h2>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-12 max-w-7xl mx-auto">
+                <div class="md:w-1/2 text-center md:text-left">
+                    <p class="font-montserrat text-lg sm:text-xl md:text-2xl text-gray-800">A Copa Passa Bola é um torneio criado pelo canal Passa a Bola, fundado por Alê Xavier e Luana Maluf, para valorizar o futebol feminino com leveza e criatividade. Com influenciadoras, atletas e convidadas, os jogos unem diversão e competição. O projeto nasceu de encontros entre mulheres e virou uma plataforma digital que reforça o protagonismo feminino no esporte, com vídeos no YouTube, Instagram e TikTok.</p>
+                </div>
+                <div class="md:w-1/2 lg:w-2/5">
+                    <img src="/dist/public/meninascopaPAB.jpg" alt="Canal Passa a Bola segurando o troféu da Copa PAB" class="w-full rounded-lg shadow-xl object-cover">
+                </div>
+            </div>
+        </section>
+
+        <section class="min-h-screen w-full flex items-center justify-center bg-secondary py-16 px-4 sm:px-6">
+            <div class="max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16">
+        
+                <div class="lg:w-1/3 text-center lg:text-left">
+                    <h2 class="font-poppins text-4xl sm:text-5xl md:text-6xl font-bold text-white">
+                        Como nosso site funciona?
+                    </h2>
+                    <p class="font-montserrat text-lg sm:text-xl text-white mt-4 opacity-90">
+                        Nossa plataforma conecta jogadoras e torcedores da Copa Passa Bola de forma simples e intuitiva.
+                    </p>
+                </div>
+        
+                <div class="lg:w-2/3 w-full flex flex-col gap-8">
+                    
+                    <div class="bg-white rounded-xl shadow-lg p-6 sm:p-8 text-left">
+                        <h3 class="font-poppins text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Para você, jogadora:</h3>
+                        <ul class="font-montserrat text-base sm:text-lg text-gray-600 space-y-3">
+                            <li><strong>Crie seu perfil:</strong> Mostre sua posição, estilo de jogo e estatísticas.</li>
+                            <li><strong>Monte ou encontre um time:</strong> Conecte-se com outras atletas para competir.</li>
+                            <li><strong>Acompanhe o campeonato:</strong> Acesse a tabela de jogos, resultados e os vídeos dos melhores momentos.</li>
+                        </ul>
+                    </div>
+        
+                    <div class="bg-white rounded-xl shadow-lg p-6 sm:p-8 text-left">
+                        <h3 class="font-poppins text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Para você, torcedor(a):</h3>
+                        <ul class="font-montserrat text-base sm:text-lg text-gray-600 space-y-3">
+                            <li><strong>Siga de perto:</strong> Veja a tabela atualizada, o chaveamento e os resultados.</li>
+                            <li><strong>Conheça as equipes:</strong> Explore os perfis dos times e das jogadoras.</li>
+                            <li><strong>Mostre sua paixão:</strong> Garanta produtos oficiais da Copa em nossa loja virtual.</li>
+                        </ul>
+                    </div>
+        
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="relative flex items-center justify-center p-8 sm:p-12 bg-gray-50">
+        <a href="#" class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2">
+             <img src="/dist/public/logoCopaPAB_colorido.svg" alt="Logo do canal Passa a Bola colorida" class="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32">
+        </a>
+        <h2 class="font-poppins text-2xl sm:text-3xl lg:text-4xl font-bold text-quaternary">Passa a Bola</h2>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

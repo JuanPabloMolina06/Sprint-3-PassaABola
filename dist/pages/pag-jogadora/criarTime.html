@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copa PAB - Crie seu time</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'jaldi': ['Jaldi', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#ffffff',
+                        'secondary': '#8461C9', // Roxo principal
+                        'tertiary': '#EE4D9B',   // Rosa
+                        'quaternary': '#6EAA38', // Verde
+                        'quinary': '#A089CE',    // Roxo claro (placar)
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-cover bg-center bg-no-repeat min-h-screen flex flex-col" style="background-image: url('/dist/public/bg-campeonato.jpg');">
+    <div class="fixed inset-0 bg-black bg-opacity-50"></div>
+
+    <header class="text-primary shadow-md sticky top-0 z-50 mb-5">
+        <nav class="container mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
+            
+            <a href="../index.html" class="flex items-center gap-3">
+                <img src="/dist/public/logoCopaPAB.svg" alt="Logo do canal Passa a Bola" class="h-12 w-12">
+                <h1 class="font-poppins text-2xl font-semibold text-primary" style="text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);">Copa PAB</h1>
+            </a>
+                
+            <div class="hidden md:block">
+                <a href="./campeonato-6.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Voltar</a>
+            </div>
+    
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-primary focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    
+        <div id="mobile-menu" class="hidden md:hidden bg-transparent">
+            <ul class="flex flex-col items-center gap-4 py-4">
+                <li><a href="./campeonato-6.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary mt-2">Voltar</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center p-4 z-10">
+            
+        <form class="w-full max-w-lg bg-black/30 backdrop-blur-xl rounded-3xl border border-white/20 p-8 sm:p-12 shadow-2xl text-white">
+            
+            <h2 class="text-3xl font-bold mb-8 text-center">
+                CRIE SEU TIME
+            </h2>
+
+            <div class="mb-8">
+                <label for="team-logo-upload" class="mx-auto w-32 h-32 bg-black/20 rounded-full border-2 border-dashed border-white/50 flex flex-col items-center justify-center cursor-pointer hover:bg-white/10 hover:border-white transition-colors">
+                    <ion-icon name="camera-outline" class="text-4xl text-white/70"></ion-icon>
+                    <span class="text-xs mt-1 text-white/70">Logo do Time</span>
+                </label>
+                <input type="file" id="team-logo-upload" class="hidden">
+            </div>
+
+            <div class="mb-6">
+                <label for="team-name" class="block mb-2 text-md font-semibold text-white/80">Nome do time</label>
+                <input type="text" id="team-name" placeholder="Digite o nome do seu time" class="w-full bg-transparent border-b-2 border-white/30 p-2 focus:outline-none focus:border-tertiary transition-colors">
+            </div>
+
+            <div class="mb-8">
+                <label for="captain-name" class="block mb-2 text-md font-semibold text-white/80">Capitã</label>
+                <input type="text" id="captain-name" placeholder="Digite o nome da capitã" class="w-full bg-transparent border-b-2 border-white/30 p-2 focus:outline-none focus:border-tertiary transition-colors">
+            </div>
+
+            <a href="./adm-time.html" class="block w-full bg-tertiary text-white text-center font-bold py-4 rounded-xl text-lg hover:brightness-110 transition-all transform hover:scale-105">
+                Criar
+            </a>
+        </form>
+    </main>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+    
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>

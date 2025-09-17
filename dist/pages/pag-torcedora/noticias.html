@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copa PAB - Chaveamento</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'jaldi': ['Jaldi', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#ffffff',
+                        'secondary': '#8461C9', // Roxo principal
+                        'tertiary': '#EE4D9B',   // Rosa
+                        'quaternary': '#6EAA38', // Verde
+                        'quinary': '#A089CE',    // Roxo claro (placar)
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    
+    <header class="bg-secondary text-primary shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
+            
+            <a href="../index.html" class="flex items-center gap-3">
+                <img src="/dist/public/logoCopaPAB.svg" alt="Logo do canal Passa a Bola" class="h-12 w-12">
+                <h1 class="font-poppins text-2xl font-semibold text-primary" style="text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);">Copa PAB</h1>
+            </a>
+            
+            <ul class="hidden md:flex items-center gap-8">
+                <li><a href="./pagTorcedora.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Home</a></li>
+                <li><a href="./chaveamento.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Chaveamento</a></li>
+                <li><a href="./mapa.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Mapa</a></li>
+                <li><a href="./loja.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Loja</a></li>
+                <li><a href="./noticias.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Noticias</a></li>
+            </ul>
+    
+            <div class="hidden md:block">
+                <a href="../index.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Logout</a>
+            </div>
+    
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-primary focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    
+        <div id="mobile-menu" class="hidden md:hidden bg-secondary">
+          <ul class="flex flex-col items-center gap-4 py-4">
+              <li><a href="./pagTorcedora.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Home</a></li>
+              <li><a href="./chaveamento.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Chaveamento</a></li>
+              <li><a href="./mapa.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Mapa</a></li>
+              <li><a href="./loja.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Loja</a></li>
+              <li><a href="./noticias.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Noticias</a></li>
+              <li><a href="../index.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary mt-2">Logout</a></li>
+          </ul>
+      </div>
+    </header>
+
+    <h1 class="flex justify-center py-10 w-full font-poppins text-5xl text-secondary font-bold">NOTICIAS</h1>
+    
+    <ul id="lista-noticias">
+        
+    </ul>
+
+    <footer class="relative flex items-center justify-center p-8 sm:p-12 bg-gray-50">
+        <a href="#" class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2">
+             <img src="/dist/public/logoCopaPAB_colorido.svg" alt="Logo do canal Passa a Bola colorida" class="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32">
+        </a>
+        <h2 class="font-poppins text-2xl sm:text-3xl lg:text-4xl font-bold text-quaternary">Passa a Bola</h2>
+    </footer> 
+
+    <script>
+        // Menu Hamburguer
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        const listarNoticias = async () => {
+        const noticias = document.getElementById('lista-noticias');
+        try {     
+            const res = await fetch('https://newsapi.org/v2/everything?q=Womens-Super-League&apiKey=c73f3e22b6bf48a3bcd94eb0e5de666b');
+            const data = await res.json();
+
+            noticias.innerHTML = data.articles.slice(0, 10).map(a => `
+            <a href="${a.url}" target="_blank" class="group block max-w-3xl mx-auto mb-6">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-5 bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-gray-200">
+                
+                <img src="${a.urlToImage}" alt="Imagem da notícia" class="w-full sm:w-44 h-40 sm:h-28 object-cover rounded-lg">
+                
+                <div class="flex flex-col justify-between">
+                    <h3 class="text-lg font-bold text-gray-800 group-hover:text-blue-600 transition-colors duration-300 font-montserrat">
+                    ${a.title || "Título não disponível"}
+                    </h3>
+                    <p class="text-sm text-gray-600 mt-2">
+                    ${a.description || "Sem descrição disponível"}
+                    </p>
+                    <p class="text-xs text-gray-400 mt-3">
+                    Fonte: ${a.source.name || "Desconhecida"}
+                    </p>
+                </div>
+                </div>
+            </a>
+            `
+        ).join('')
+        } catch(error) {
+            console.log("Erro na api: ", error)
+            noticias.innerHTML = `<div class="flex justify-center items-center">
+                <p class="font-montserrat text-red-600 text-4xl font-bold">Não foi possivel listar as noticias</p>
+            </div>`
+        }
+        };
+
+        listarNoticias();
+    </script>
+</body>
+</html>

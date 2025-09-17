@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encontre seu Time - Copa PAB</title> <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .card-exit-left { transform: translateX(-150%) rotate(-15deg); opacity: 0; }
+        .card-exit-right { transform: translateX(150%) rotate(15deg); opacity: 0; }
+        .card-enter { transform: scale(0.9); opacity: 0; }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'jaldi': ['Jaldi', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#ffffff',
+                        'secondary': '#8461C9', // Roxo principal
+                        'tertiary': '#EE4D9B',   // Rosa
+                        'quaternary': '#6EAA38', // Verde
+                        'quinary': '#A089CE',    // Roxo claro (placar)
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 font-poppins">
+
+    <header class="bg-secondary text-primary shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
+            
+            <a href="../index.html" class="flex items-center gap-3">
+                <img src="/dist/public/logoCopaPAB.svg" alt="Logo do canal Passa a Bola" class="h-12 w-12">
+                <h1 class="font-poppins text-2xl font-semibold text-primary" style="text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);">Copa PAB</h1>
+            </a>
+            
+            <ul class="hidden md:flex items-center gap-8">
+                <li><a href="./pagJogadora.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Home</a></li>
+                <li><a href="./chaveamento.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Chaveamento</a></li>
+                <li><a href="./campeonato.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Campeonato</a></li>
+                <li><a href="./mapa.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Mapa</a></li>
+                <li><a href="./loja.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Loja</a></li>
+                <li><a href="./noticias.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Noticias</a></li>
+            </ul>
+
+            <div class="hidden md:block">
+                <a href="../index.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Logout</a>
+            </div>
+
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-primary focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-secondary">
+            <ul class="flex flex-col items-center gap-4 py-4">
+                <li><a href="./pagJogadora.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Home</a></li>
+                <li><a href="./chaveamento.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Chaveamento</a></li>
+                <li><a href="./campeonato.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Campeonato</a></li>
+                <li><a href="./mapa.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Mapa</a></li>
+                <li><a href="./loja.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Loja</a></li>
+                <li><a href="./noticias.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary">Noticias</a></li>
+                <li><a href="../index.html" class="font-montserrat font-medium text-lg transition-colors hover:text-tertiary mt-2">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container mx-auto p-4 md:p-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+        <aside class="lg:col-span-1">
+            <div class="bg-white rounded-2xl p-6 shadow-lg space-y-8 sticky top-28"> 
+                <div>
+                    <h3 class="font-bold text-xl mb-4 text-gray-800">FILTRAR</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="text-gray-600 text-sm">Região:</label>
+                            <select class="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary">
+                                <option>Zona Sul</option><option>Zona Norte</option><option>Zona Oeste</option><option>Zona Leste</option>
+                            </select>
+                        </div>
+                         <div>
+                            <label class="text-gray-600 text-sm">Posição:</label>
+                            <select class="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary">
+                                <option>Ponta E</option><option>Ponta D</option><option>Atacante</option><option>Meio C</option><option>Volante</option><option>Lateral</option><option>Zagueira</option><option>Goleira</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl mb-4 text-gray-800">Times interessados</h3>
+                    <div id="interested-teams-list" class="space-y-3">
+                        </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="lg:col-span-2 flex flex-col items-center">
+            
+            <div id="tinder-view" class="w-full">
+                <h1 class="text-3xl sm:text-4xl font-bold text-center text-secondary mb-6">
+                    ENCONTRE SEU TIME
+                </h1>
+                <div id="team-card" class="bg-white rounded-3xl shadow-xl w-full max-w-lg mx-auto transition-all duration-500">
+                    <div class="p-6">
+                        <div class="flex items-center gap-4 mb-4">
+                            <span id="team-status" class="w-4 h-4 rounded-full bg-yellow-400"></span>
+                            <h2 id="team-name" class="text-2xl font-bold text-gray-800"></h2>
+                        </div>
+                        <img id="team-image" src="" alt="Foto do time" class="w-full h-64 object-cover rounded-2xl mb-4">
+                        <h3 class="font-bold text-gray-800 text-lg">Descrição:</h3>
+                        <p id="team-description" class="text-gray-600 mt-1"></p>
+                    </div>
+                    <div class="flex justify-center gap-6 p-6 border-t">
+                        <button id="reject-btn" class="w-20 h-20 rounded-full bg-red-100 text-red-500 hover:bg-red-200 flex items-center justify-center transition transform hover:scale-110">
+                           <svg class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                        </button>
+                         <button id="accept-btn" class="w-20 h-20 rounded-full bg-green-100 text-green-500 hover:bg-green-200 flex items-center justify-center transition transform hover:scale-110">
+                           <svg class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="chat-view" class="hidden w-full">
+                <div class="bg-white rounded-3xl shadow-xl w-full max-w-lg mx-auto">
+                    <div class="flex items-center justify-between p-4 border-b">
+                        <h2 id="chat-with-team-name" class="text-xl font-bold text-gray-800"></h2>
+                        <button id="back-to-tinder-btn" class="text-sm font-semibold text-secondary hover:underline">Voltar</button>
+                    </div>
+                    <div class="p-6 h-96 overflow-y-auto">
+                        <p class="text-center text-gray-400">(Aqui entraria a conversa com o time)</p>
+                    </div>
+                    <div class="p-4 border-t flex gap-2">
+                        <input type="text" placeholder="Digite sua mensagem..." class="flex-grow border border-gray-300 rounded-full py-2 px-4 focus:outline-none focus:ring-2 focus:ring-secondary">
+                        <button class="bg-tertiary text-white font-bold px-5 py-2 rounded-full hover:brightness-110">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if(menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        const teamsData = [
+            { name: 'Guerreiras da Vila', image: '/dist/public/guerreirasDaVila.jpg', description: 'Somos um time da zona sul de São Paulo, com 3 anos de história. Estamos em busca de uma atacante com estilo de jogo agressivo e veloz.' },
+            { name: 'Leoas do Asfalto', image: '/dist/public/leoasDoAsfalto.jpg', description: 'Equipe focada em técnica e posse de bola. Procuramos meio-campistas com boa visão de jogo.' },
+            { name: 'Trovão Azul', image: '/dist/public/trovaoAzul.jpg', description: 'Time novo na cidade, muita energia e vontade de vencer. Vagas abertas para todas as posições!' }
+        ];
+        const interestedTeamsData = [
+            { id: 'time_y_123', name: 'Time Y', avatarUrl: 'https://i.imgur.com/placeholder1.jpg' },
+            { id: 'time_z_456', name: 'Time Z', avatarUrl: 'https://i.imgur.com/placeholder2.jpg' }
+        ];
+
+        const tinderView = document.getElementById('tinder-view');
+        const chatView = document.getElementById('chat-view');
+        const backToTinderBtn = document.getElementById('back-to-tinder-btn');
+        const chatWithTeamName = document.getElementById('chat-with-team-name');
+        const interestedTeamsList = document.getElementById('interested-teams-list');
+        const teamCard = document.getElementById('team-card');
+        const teamName = document.getElementById('team-name');
+        const teamImage = document.getElementById('team-image');
+        const teamDescription = document.getElementById('team-description');
+        const acceptBtn = document.getElementById('accept-btn');
+        const rejectBtn = document.getElementById('reject-btn');
+        
+        let currentTeamIndex = 0;
+
+        function showTinderView() {
+            chatView.classList.add('hidden');
+            tinderView.classList.remove('hidden');
+        }
+        function showChatView(teamId, teamName) {
+            tinderView.classList.add('hidden');
+            chatWithTeamName.textContent = `Conversa com ${teamName}`;
+            chatView.classList.remove('hidden');
+        }
+
+        function renderInterestedTeams() {
+            if(!interestedTeamsList) return;
+            interestedTeamsList.innerHTML = '';
+            interestedTeamsData.forEach(team => {
+                const teamItemHTML = `
+                    <div class="flex items-center justify-between bg-gray-50 p-3 rounded-lg hover:bg-gray-100 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-gray-300 bg-cover bg-center" style="background-image: url('${team.avatarUrl}')"></div>
+                            <span class="font-semibold text-gray-700">${team.name}</span>
+                        </div>
+                        <button data-team-id="${team.id}" data-team-name="${team.name}" class="start-chat-btn bg-tertiary text-white text-xs font-bold px-3 py-1 rounded-full hover:brightness-110">
+                            Conversar
+                        </button>
+                    </div>
+                `;
+                interestedTeamsList.innerHTML += teamItemHTML;
+            });
+        }
+        function renderTeam(index) {
+            if(!teamCard) return;
+            const team = teamsData[index];
+            teamName.textContent = team.name;
+            teamImage.src = team.image;
+            teamDescription.textContent = team.description;
+        }
+        function showNextTeam(action) {
+            if(!teamCard) return;
+            teamCard.classList.add(action === 'accept' ? 'card-exit-right' : 'card-exit-left');
+            setTimeout(() => {
+                currentTeamIndex = (currentTeamIndex + 1) % teamsData.length;
+                renderTeam(currentTeamIndex);
+                teamCard.classList.remove('card-exit-left', 'card-exit-right');
+                teamCard.classList.add('card-enter');
+                setTimeout(() => {
+                    teamCard.classList.remove('card-enter');
+                }, 10);
+            }, 500);
+        }
+
+        if(acceptBtn) acceptBtn.addEventListener('click', () => showNextTeam('accept'));
+        if(rejectBtn) rejectBtn.addEventListener('click', () => showNextTeam('reject'));
+        if(backToTinderBtn) backToTinderBtn.addEventListener('click', showTinderView);
+
+        if(interestedTeamsList) {
+            interestedTeamsList.addEventListener('click', (event) => {
+                const target = event.target;
+                if (target.classList.contains('start-chat-btn')) {
+                    const teamId = target.dataset.teamId;
+                    const teamName = target.dataset.teamName;
+                    showChatView(teamId, teamName);
+                }
+            });
+        }
+
+        renderTeam(currentTeamIndex);
+        renderInterestedTeams();
+    });
+</script>
+
+</body>
+</html>
