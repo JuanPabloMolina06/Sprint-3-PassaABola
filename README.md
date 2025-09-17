@@ -18,7 +18,7 @@ Para visualizar e executar o projeto em sua máquina local, siga os passos abaix
       git clone https://github.com/JuanPabloMolina06/Sprint-3-PassaABola.git
       ```
 
-    - **Para baixar o ZIP:** Baixe o arquivo `.zip`, extraia a pasta em um local de sua preferência e navegue até ela pelo terminal.
+    - **Para baixar o ZIP:** Baixe o arquivo `.zip`, extraia a pasta em um local de sua preferência e navegue até ela pelo terminal e abra o `index.html`.
 
 2.  **Acesse a Pasta do Projeto**
 
